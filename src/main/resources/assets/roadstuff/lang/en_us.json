@@ -5,5 +5,6 @@
   "block.roadstuff.delineatorsign" : "Delineator Sign",
   "block.roadstuff.passageforbiddensign" : "Passage Forbidden Sign",
   "block.roadstuff.stopsign" : "Stop Sign",
-  "block.roadstuff.parksign" : "Park Sign"
+  "block.roadstuff.parksign" : "Park Sign",
+  "block.roadstuff.onewaysign" : "OneWay Sign"
 }

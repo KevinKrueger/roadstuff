@@ -17,31 +17,37 @@ public class ModBlocks
     // Defaults
     private static final Material MATERIAL_DEFAULT = Material.IRON;
     private static final SoundType SOUND_DEFAULT = SoundType.METAL;
+    private static final float HARDNESS_DEFAULT = 3f;
+    private static final float RESISTANCE_DEFAULT = 10f;
 
     // Registration
     public static final RegistryObject<Block> METAL_POLE = register("metall_stange",
             () -> new MetalPole(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
-                    .hardnessAndResistance(3f, 10f).sound(SOUND_DEFAULT)));
+                    .hardnessAndResistance(HARDNESS_DEFAULT, RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> CROSSWALKSIGN = register("crosswalksign",
             () -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
-                    .hardnessAndResistance(3f, 10f).sound(SOUND_DEFAULT)));
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> DELINEATORSIGN = register("delineatorsign",
             () -> new DelineatorSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
-                    .hardnessAndResistance(3f, 10f).sound(SOUND_DEFAULT)));
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT ).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> PASSAGE_FORBIDDEN_SIGN = register("passageforbiddensign",
             () -> new BaseRoundSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
-                    .hardnessAndResistance(3f, 10f).sound(SOUND_DEFAULT)));
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> STOP_SIGN = register("stopsign",
             () -> new BaseOctagonSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
-                    .hardnessAndResistance(3f, 10f).sound(SOUND_DEFAULT)));
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> PARK_SIGN = register("parksign",
             () -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
-                    .hardnessAndResistance(3f, 10f).sound(SOUND_DEFAULT)));
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> ONEWAY_SIGN = register("onewaysign",
+            ()  -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static void register() { }
 
