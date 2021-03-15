@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/delineatorsign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/delineatorsign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/delineatorsign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/delineatorsign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/delineatorsign",
+      "y": 270
+    }
+  }
+}

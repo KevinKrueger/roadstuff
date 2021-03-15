@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/stopsign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/stopsign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/stopsign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/stopsign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/stopsign",
+      "y": 270
+    }
+  }
+}

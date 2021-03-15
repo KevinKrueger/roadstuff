@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/passageforbiddensign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/passageforbiddensign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/passageforbiddensign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/passageforbiddensign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/passageforbiddensign",
+      "y": 270
+    }
+  }
+}

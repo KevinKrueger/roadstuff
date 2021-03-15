@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/parksign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/parksign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/parksign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/parksign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/parksign",
+      "y": 270
+    }
+  }
+}
