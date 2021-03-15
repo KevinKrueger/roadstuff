@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/givewaysign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/givewaysign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/givewaysign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/givewaysign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/givewaysign",
+      "y": 270
+    }
+  }
+}
