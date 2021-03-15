@@ -39,7 +39,7 @@ public class ModBlocks
             () -> new BaseOctagonSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(3f, 10f).sound(SOUND_DEFAULT)));
 
-    public static final RegistryObject<Block> PARK_SIGN = register("q",
+    public static final RegistryObject<Block> PARK_SIGN = register("parksign",
             () -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(3f, 10f).sound(SOUND_DEFAULT)));
 
