@@ -4,13 +4,16 @@ import com.kevinkrueger.roadstuff.RoadStuff;
 import com.kevinkrueger.roadstuff.block.*;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 
+import java.util.Properties;
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class ModBlocks
 {
@@ -55,6 +58,20 @@ public class ModBlocks
 
     public static final RegistryObject<Block> GUIDE_CONE = register("guidecone",
             () -> new GuideCone(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> STREET_LIGHT = register("streetlight",
+            () -> new StreetLight(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
+                    .setLightLevel(new ToIntFunction<BlockState>() {
+                        @Override
+                        public int applyAsInt(BlockState value) {
+                            return 15;
+                        }
+                    })));
+
+    public static final RegistryObject<Block> CRASH_PROTECTION_BOLLARD = register("crashprotectionbollard",
+            () -> new CrashProtectionBollard(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static void register() { }

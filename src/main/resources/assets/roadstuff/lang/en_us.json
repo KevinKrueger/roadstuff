@@ -8,5 +8,7 @@
   "block.roadstuff.parksign" : "Park Sign",
   "block.roadstuff.onewaysign" : "OneWay Sign",
   "block.roadstuff.givewaysign" : "GiveWay Sign",
-  "block.roadstuff.guidecone" : "Guide Cone"
+  "block.roadstuff.guidecone" : "Guide Cone",
+  "block.roadstuff.streetlight" : "Street Light",
+  "block.roadstuff.crashprotectionbollard" : "Crash Protection Bollard"
 }

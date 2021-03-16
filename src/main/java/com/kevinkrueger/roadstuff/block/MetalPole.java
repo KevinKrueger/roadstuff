@@ -45,14 +45,10 @@ public class MetalPole extends BlockBase
 
     private static final VoxelShape SHAPE_S = Block.makeCuboidShape(7, 0, 6, 9, 16, 8);
 
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-
     public MetalPole(Properties properties)
     {
         super(properties);
     }
-
-
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
