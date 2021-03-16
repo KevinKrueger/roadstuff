@@ -53,6 +53,10 @@ public class ModBlocks
             () -> new BaseInvertedTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
+    public static final RegistryObject<Block> GUIDE_CONE = register("guidecone",
+            () -> new GuideCone(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
     public static void register() { }
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block)
