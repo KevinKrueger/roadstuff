@@ -1,7 +1,22 @@
 {
     "variants": {
-        "": {
+        "normal": {
             "model": "roadstuff:block/metall_stange"
+        },
+        "facing=north": {
+            "model": "roadstuff:block/metall_stange"
+        },
+        "facing=east": {
+            "model": "roadstuff:block/metall_stange",
+            "y": 90
+        },
+        "facing=south": {
+            "model": "roadstuff:block/metall_stange",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "roadstuff:block/metall_stange",
+            "y": 270
         }
     }
 }
