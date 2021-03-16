@@ -74,6 +74,10 @@ public class ModBlocks
             () -> new CrashProtectionBollard(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
+    public static final RegistryObject<Block> DOUBLECURVE_LEFTSIGN = register("doublecurve_leftsign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
     public static void register() { }
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block)
