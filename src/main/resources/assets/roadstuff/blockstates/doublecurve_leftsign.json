@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/doublecurve_leftsign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/doublecurve_leftsign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/doublecurve_leftsign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/doublecurve_leftsign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/doublecurve_leftsign",
+      "y": 270
+    }
+  }
+}

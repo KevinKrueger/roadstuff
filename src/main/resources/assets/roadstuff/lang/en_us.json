@@ -8,5 +8,6 @@
   "block.roadstuff.parksign" : "Park Sign",
   "block.roadstuff.onewaysign" : "OneWay Sign",
   "block.roadstuff.givewaysign" : "GiveWay Sign",
-  "block.roadstuff.guidecone" : "Guide Cone"
+  "block.roadstuff.guidecone" : "Guide Cone",
+  "block.roadstuff.doublecurve_leftsign" : "Doublecurve Left Sign"
 }
