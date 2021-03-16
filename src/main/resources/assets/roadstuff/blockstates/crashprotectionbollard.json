@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/crashprotectionbollard"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/crashprotectionbollard"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/crashprotectionbollard",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/crashprotectionbollard",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/crashprotectionbollard",
+      "y": 270
+    }
+  }
+}
