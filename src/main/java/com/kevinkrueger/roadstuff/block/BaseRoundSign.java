@@ -188,25 +188,14 @@ public class BaseRoundSign extends BlockBase {
             Block.makeCuboidShape(0.4038461538461533, 7.75, 7.076923076923077, 0.6538461538461533, 8.25, 9.076923076923077)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-
     public BaseRoundSign(Properties properties) {
         super(properties);
-    }
-
-
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockItemUseContext context) {
-        return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
     }
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         switch (state.get(FACING))
         {
-            case NORTH:
-                return SHAPE_N;
             case SOUTH:
                 return SHAPE_S;
             case WEST:
@@ -217,25 +206,4 @@ public class BaseRoundSign extends BlockBase {
                 return SHAPE_N;
         }
     }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public BlockState rotate(BlockState state, Rotation rot)
-    {
-        return state.with(FACING, rot.rotate(state.get(FACING)));
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public BlockState mirror(BlockState state, Mirror mirrorIn)
-    {
-        return state.rotate(mirrorIn.toRotation((state.get(FACING))));
-    }
-
-    @Override
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder)
-    {
-        builder.add(FACING);
-    }
-
 }

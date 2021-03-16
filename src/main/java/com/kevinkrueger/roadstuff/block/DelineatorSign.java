@@ -126,19 +126,9 @@ public class DelineatorSign extends BlockBase
             Block.makeCuboidShape(8.875, 0, 7, 8.9375, 15.6875, 9)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
-
-
-
     public DelineatorSign(Properties properties)
     {
         super(properties);
-    }
-
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockItemUseContext context)
-    {
-        return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
     }
 
     @Override
@@ -146,8 +136,6 @@ public class DelineatorSign extends BlockBase
     {
         switch (state.get(FACING))
         {
-            case NORTH:
-                return SHAPE_N;
             case SOUTH:
                 return SHAPE_S;
             case WEST:
@@ -157,25 +145,5 @@ public class DelineatorSign extends BlockBase
             default:
                 return SHAPE_N;
         }
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public BlockState rotate(BlockState state, Rotation rot)
-    {
-        return state.with(FACING, rot.rotate(state.get(FACING)));
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public BlockState mirror(BlockState state, Mirror mirrorIn)
-    {
-        return state.rotate(mirrorIn.toRotation((state.get(FACING))));
-    }
-
-    @Override
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder)
-    {
-        builder.add(FACING);
     }
 }

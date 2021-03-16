@@ -181,21 +181,12 @@ public class BaseOctagonSign extends BlockBase {
     public BaseOctagonSign(Properties properties) {
         super(properties);
     }
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockItemUseContext context) {
-        return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
-    }
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         switch (state.get(FACING))
         {
-            case NORTH:
-                return SHAPE_N;
             case SOUTH:
                 return SHAPE_S;
             case WEST:
@@ -206,23 +197,5 @@ public class BaseOctagonSign extends BlockBase {
                 return SHAPE_N;
         }
     }
-    @SuppressWarnings("deprecation")
-    @Override
-    public BlockState rotate(BlockState state, Rotation rot)
-    {
-        return state.with(FACING, rot.rotate(state.get(FACING)));
-    }
 
-    @SuppressWarnings("deprecation")
-    @Override
-    public BlockState mirror(BlockState state, Mirror mirrorIn)
-    {
-        return state.rotate(mirrorIn.toRotation((state.get(FACING))));
-    }
-
-    @Override
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder)
-    {
-        builder.add(FACING);
-    }
 }
