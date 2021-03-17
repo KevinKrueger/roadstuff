@@ -78,6 +78,16 @@ public class ModBlocks
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
+    public static final RegistryObject<Block> WARNING_TRIANGLE = register("warningtriangle",
+            () -> new WarningTriangle(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
+                    .setLightLevel(new ToIntFunction<BlockState>() {
+                        @Override
+                        public int applyAsInt(BlockState value) {
+                            return 5;
+                        }
+                    })));
+
     public static void register() { }
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block)
