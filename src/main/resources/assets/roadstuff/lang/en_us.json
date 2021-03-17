@@ -4,6 +4,7 @@
   "block.roadstuff.crosswalksign" : "Crosswalk Sign",
   "block.roadstuff.delineatorsign" : "Delineator Sign",
   "block.roadstuff.passageforbiddensign" : "Passage Forbidden Sign",
+  "block.roadstuff.drivingdirection_leftsign" : "Driving Direction Left Sign",
   "block.roadstuff.drivingdirection_rightsign" : "Driving Direction Right Sign",
   "block.roadstuff.stopsign" : "Stop Sign",
   "block.roadstuff.parksign" : "Park Sign",
