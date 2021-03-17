@@ -10,8 +10,8 @@
   "block.roadstuff.givewaysign" : "GiveWay Sign",
   "block.roadstuff.guidecone" : "Guide Cone",
   "block.roadstuff.doublecurve_leftsign" : "Doublecurve Left Sign",
-  "block.roadstuff.guidecone" : "Guide Cone",
   "block.roadstuff.streetlight" : "Street Light",
   "block.roadstuff.crashprotectionbollard" : "Crash Protection Bollard",
-  "block.roadstuff.warningtriangle" : "Warning Triangle"
+  "block.roadstuff.warningtriangle" : "Warning Triangle",
+  "block.roadstuff.warnbarque" : "Warnbarque"
 }

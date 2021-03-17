@@ -88,6 +88,17 @@ public class ModBlocks
                         }
                     })));
 
+    public static final RegistryObject<Block> WARNBARQUE = register("warnbarque",
+            () -> new Warnbarque(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
+                    .setLightLevel(new ToIntFunction<BlockState>() {
+                        @Override
+                        public int applyAsInt(BlockState value) {
+                            return 12;
+                        }
+                    })));
+
+
     public static void register() { }
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block)

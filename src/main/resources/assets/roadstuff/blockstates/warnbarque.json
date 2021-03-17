@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/warnbarque"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/warnbarque"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/warnbarque",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/warnbarque",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/warnbarque",
+      "y": 270
+    }
+  }
+}
