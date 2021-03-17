@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/drivingdirection_rightsign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/drivingdirection_rightsign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/drivingdirection_rightsign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/drivingdirection_rightsign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/drivingdirection_rightsign",
+      "y": 270
+    }
+  }
+}

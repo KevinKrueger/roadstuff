@@ -40,6 +40,10 @@ public class ModBlocks
             () -> new BaseRoundSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
+    public static final RegistryObject<Block> DRIVINGDIRECTION_RIGHTSIGN = register("drivingdirection_rightsign",
+            () -> new BaseRoundSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
     public static final RegistryObject<Block> STOP_SIGN = register("stopsign",
             () -> new BaseOctagonSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
