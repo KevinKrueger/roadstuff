@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/warningtriangle"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/warningtriangle"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/warningtriangle",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/warningtriangle",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/warningtriangle",
+      "y": 270
+    }
+  }
+}

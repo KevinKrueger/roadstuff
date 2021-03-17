@@ -3,8 +3,11 @@ package com.kevinkrueger.roadstuff.block;
 import com.kevinkrueger.roadstuff.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+<<<<<<< HEAD
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.properties.BlockStateProperties;
+=======
+>>>>>>> 60024a2fc6477f1a6ff7b20e31b8abaf944d3ecd
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
