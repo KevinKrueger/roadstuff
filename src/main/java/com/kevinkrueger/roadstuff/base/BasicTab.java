@@ -1,26 +1,22 @@
 package com.kevinkrueger.roadstuff.base;
 
-
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IItemProvider;
 
-public class BasicTab extends ItemGroup {
+import java.util.function.Supplier;
 
-    private IItemProvider blockOrItem;
+public class BasicTab extends ItemGroup
+{
+    private final Supplier<ItemStack> blockOrItem;
 
-    /**
-     * @param label Name des Tabs
-     * @param blockOrItem Holt sich das angegebene Objekt (Block/Item) und zeigt es an
-     */
-    public BasicTab(String label, IItemProvider blockOrItem)
+    public BasicTab(final String name, final Supplier<ItemStack> blockOrItem)
     {
-        super(label);
+        super(name);
         this.blockOrItem = blockOrItem;
     }
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(blockOrItem);
+        return blockOrItem.get();
     }
 }

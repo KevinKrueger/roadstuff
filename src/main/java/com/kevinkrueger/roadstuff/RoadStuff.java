@@ -1,5 +1,6 @@
 package com.kevinkrueger.roadstuff;
 
+import com.kevinkrueger.roadstuff.base.BasicTab;
 import com.kevinkrueger.roadstuff.util.ModBlocks;
 import com.kevinkrueger.roadstuff.util.Registration;
 import net.minecraft.block.Block;
@@ -29,20 +30,14 @@ public class RoadStuff
     public static final String NAME = "Road Stuff";
     public static final String MOD_VER = "1.0.0";
     public static SimpleChannel SIMPLE_CHANNEL;
-    public static ItemGroup ROAD_STUFF_TAB;
+    public static BasicTab ROAD_STUFF_TAB;
 
     public RoadStuff()
     {
         // Init
         Registration.init();
         ModBlocks.register();
-
-        ROAD_STUFF_TAB = new ItemGroup(MOD_ID) {
-            @Override
-            public ItemStack createIcon() {
-                return new ItemStack(ModBlocks.CROSSWALKSIGN.get());
-            }
-        };
+        ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALKSIGN.get()));
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
