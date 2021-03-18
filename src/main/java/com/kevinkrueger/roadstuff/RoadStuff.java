@@ -37,7 +37,7 @@ public class RoadStuff
         // Init
         Registration.init();
         ModBlocks.register();
-        ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALKSIGN.get()));
+        ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALK_SIGN.get()));
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -50,7 +50,7 @@ public class RoadStuff
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+        // Nothing to do...
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)

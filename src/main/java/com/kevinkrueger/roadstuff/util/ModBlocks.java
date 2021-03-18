@@ -28,7 +28,7 @@ public class ModBlocks
             () -> new MetalPole(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT, RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
-    public static final RegistryObject<Block> CROSSWALKSIGN = register("crosswalksign",
+    public static final RegistryObject<Block> CROSSWALK_SIGN = register("crosswalksign",
             () -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
@@ -111,6 +111,7 @@ public class ModBlocks
                     })));
 
 
+    // For init
     public static void register() { }
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block)
