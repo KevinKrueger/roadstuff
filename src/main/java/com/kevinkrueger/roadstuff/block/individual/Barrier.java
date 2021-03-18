@@ -1,6 +1,5 @@
 package com.kevinkrueger.roadstuff.block.individual;
 
-import com.kevinkrueger.roadstuff.DirectionalVoxelShape;
 import com.kevinkrueger.roadstuff.base.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,27 +17,27 @@ import java.util.stream.Stream;
 public class Barrier extends BlockBase {
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.makeCuboidShape(0, 0, 0, 2, 16, 3),
-            Block.makeCuboidShape(2, 12, 1, 14, 15, 2),
-            Block.makeCuboidShape(14, 0, 0, 16, 16, 3)
+            Block.makeCuboidShape(0, 0, 0, 2, 16, 2),
+            Block.makeCuboidShape(2, 12, 1, 14, 15, 1),
+            Block.makeCuboidShape(14, 0, 0, 16, 16, 2)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
     private static final VoxelShape SHAPE_W = Stream.of(
-            Block.makeCuboidShape(0, 0, 0, 3, 16, 2),
-            Block.makeCuboidShape(1, 12, 2, 2, 15, 14),
-            Block.makeCuboidShape(0, 0, 14, 3, 16, 16)
+            Block.makeCuboidShape(0, 0, 14, 2, 16, 16),
+            Block.makeCuboidShape(1, 12, 2, 1, 15, 14),
+            Block.makeCuboidShape(0, 0, 0, 2, 16, 2)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
-    private static final VoxelShape SHAPE_O =Stream.of(
-            Block.makeCuboidShape(13, 0, 0, 16, 16, 2),
-            Block.makeCuboidShape(14, 12, 2, 15, 15, 14),
-            Block.makeCuboidShape(13, 0, 14, 16, 16, 16)
+    private static final VoxelShape SHAPE_O = Stream.of(
+            Block.makeCuboidShape(14, 0, 0, 16, 16, 2),
+            Block.makeCuboidShape(15, 12, 2, 15, 15, 14),
+            Block.makeCuboidShape(14, 0, 14, 16, 16, 16)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
     private static final VoxelShape SHAPE_S = Stream.of(
-            Block.makeCuboidShape(0, 0, 0, 2, 16, 3),
-            Block.makeCuboidShape(2, 12, 1, 14, 15, 2),
-            Block.makeCuboidShape(14, 0, 0, 16, 16, 3)
+            Block.makeCuboidShape(14, 0, 14, 16, 16, 16),
+            Block.makeCuboidShape(2, 12, 15, 14, 15, 15),
+            Block.makeCuboidShape(0, 0, 14, 2, 16, 16)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
 

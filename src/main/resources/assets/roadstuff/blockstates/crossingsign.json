@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/crossingsign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/crossingsign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/crossingsign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/crossingsign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/crossingsign",
+      "y": 270
+    }
+  }
+}

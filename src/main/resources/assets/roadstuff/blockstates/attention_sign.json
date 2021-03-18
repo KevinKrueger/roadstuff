@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/attention_sign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/attention_sign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/attention_sign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/attention_sign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/attention_sign",
+      "y": 270
+    }
+  }
+}

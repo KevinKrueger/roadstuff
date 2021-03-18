@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/attention_crosswalksign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/attention_crosswalksign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/attention_crosswalksign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/attention_crosswalksign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/attention_crosswalksign",
+      "y": 270
+    }
+  }
+}
