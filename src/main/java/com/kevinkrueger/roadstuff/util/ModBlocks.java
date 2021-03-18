@@ -110,6 +110,12 @@ public class ModBlocks
                         }
                     })));
 
+    public static final RegistryObject<Block> BARRIER = register("barrier",
+            () -> new Barrier(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+
+
 
     // For init
     public static void register() { }

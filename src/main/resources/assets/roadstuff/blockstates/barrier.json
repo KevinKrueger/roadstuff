@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/barrier"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/barrier"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/barrier",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/barrier",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/barrier",
+      "y": 270
+    }
+  }
+}
