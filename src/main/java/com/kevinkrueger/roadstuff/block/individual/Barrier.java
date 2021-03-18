@@ -1,11 +1,8 @@
 package com.kevinkrueger.roadstuff.block.individual;
 
-import com.kevinkrueger.roadstuff.DirectionalVoxelShape;
 import com.kevinkrueger.roadstuff.base.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.state.Property;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -46,6 +43,7 @@ public class Barrier extends BlockBase {
     {
         super(properies);
     }
+
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
     {
@@ -61,6 +59,4 @@ public class Barrier extends BlockBase {
                 return SHAPE_N;
         }
     }
-
-
 }
