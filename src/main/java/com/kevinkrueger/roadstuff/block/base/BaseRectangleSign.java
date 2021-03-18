@@ -1,6 +1,6 @@
-package com.kevinkrueger.roadstuff.block;
+package com.kevinkrueger.roadstuff.block.base;
 
-import com.kevinkrueger.roadstuff.BlockBase;
+import com.kevinkrueger.roadstuff.base.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;

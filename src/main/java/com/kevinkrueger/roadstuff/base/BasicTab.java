@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff;
+package com.kevinkrueger.roadstuff.base;
 
 
 import net.minecraft.item.ItemGroup;

@@ -1,5 +1,6 @@
-package com.kevinkrueger.roadstuff;
+package com.kevinkrueger.roadstuff.base;
 
+import com.kevinkrueger.roadstuff.TileEntityBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;

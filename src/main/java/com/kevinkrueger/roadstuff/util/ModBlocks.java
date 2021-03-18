@@ -1,7 +1,8 @@
 package com.kevinkrueger.roadstuff.util;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
-import com.kevinkrueger.roadstuff.block.*;
+import com.kevinkrueger.roadstuff.block.base.*;
+import com.kevinkrueger.roadstuff.block.individual.*;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,9 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
-import org.lwjgl.system.CallbackI;
 
-import java.util.Properties;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
