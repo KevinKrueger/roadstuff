@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/leftcurvesign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/leftcurvesign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/leftcurvesign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/leftcurvesign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/leftcurvesign",
+      "y": 270
+    }
+  }
+}

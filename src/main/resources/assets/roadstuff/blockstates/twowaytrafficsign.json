@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/twowaytrafficsign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/twowaytrafficsign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/twowaytrafficsign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/twowaytrafficsign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/twowaytrafficsign",
+      "y": 270
+    }
+  }
+}
