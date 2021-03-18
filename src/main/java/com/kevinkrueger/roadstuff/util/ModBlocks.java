@@ -11,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
+import org.lwjgl.system.CallbackI;
 
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
@@ -132,6 +133,22 @@ public class ModBlocks
 
     public static final RegistryObject<Block> BARRIER = register("barrier",
             () -> new Barrier(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> ATTENTION_SIGN = register("attention_sign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> ATTENTION_CROSSWALKSIGN = register("attention_crosswalksign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> ONETIME_RIGHTOFWAY_SIGN = register("onetime_rightofway_sign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> CROSSINGSIGN = register("crossingsign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
 

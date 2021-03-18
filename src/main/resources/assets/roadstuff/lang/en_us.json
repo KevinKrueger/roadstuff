@@ -13,6 +13,10 @@
   "block.roadstuff.guidecone" : "Guide Cone",
   "block.roadstuff.doublecurve_leftsign" : "Doublecurve Left Sign",
   "block.roadstuff.doublecurve_rightsign" : "Doublecurve Right Sign",
+  "block.roadstuff.attention_sign" : "Attention Sign",
+  "block.roadstuff.attention_crosswalksign" : "Attention Crosswalk Sign",
+  "block.roadstuff.onetime_rightofway_sign" : "One-Time Right-Of-Way Sign",
+  "block.roadstuff.crossingsign" : "Crossing Sign",
   "block.roadstuff.rightcurvesign" : "Right Curve Sign",
   "block.roadstuff.leftcurvesign" : "Left Curve Sign",
   "block.roadstuff.twowaytrafficsign" : "Two-Way Traffic Sign",
@@ -21,5 +25,6 @@
   "block.roadstuff.streetlight" : "Street Light",
   "block.roadstuff.crashprotectionbollard" : "Crash Protection Bollard",
   "block.roadstuff.warningtriangle" : "Warning Triangle",
-  "block.roadstuff.warnbarque" : "Warnbarque"
+  "block.roadstuff.warnbarque" : "Warnbarque",
+  "block.roadstuff.barrier" : "Barrier"
 }
