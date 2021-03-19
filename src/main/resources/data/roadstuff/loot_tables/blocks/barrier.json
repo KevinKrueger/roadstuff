@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "polls": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "roadstuff:barrier"
+        }
+      ]
+    }
+  ]
+}

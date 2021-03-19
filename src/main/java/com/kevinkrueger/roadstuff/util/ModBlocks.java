@@ -10,6 +10,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import org.lwjgl.system.CallbackI;
 
@@ -133,7 +134,8 @@ public class ModBlocks
 
     public static final RegistryObject<Block> BARRIER = register("barrier",
             () -> new Barrier(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
-                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> ATTENTION_SIGN = register("attention_sign",
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
@@ -150,9 +152,6 @@ public class ModBlocks
     public static final RegistryObject<Block> CROSSINGSIGN = register("crossingsign",
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
-
-
-
 
     // For init
     public static void register() { }

@@ -273,7 +273,6 @@ public class BaseTriangleSign extends BlockBase {
         super(properties);
     }
 
-
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
     {
@@ -289,6 +288,5 @@ public class BaseTriangleSign extends BlockBase {
                 return SHAPE_N;
         }
     }
-
 }
 
