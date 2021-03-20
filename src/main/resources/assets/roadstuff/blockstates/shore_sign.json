@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/shore_sign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/shore_sign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/shore_sign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/shore_sign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/shore_sign",
+      "y": 270
+    }
+  }
+}

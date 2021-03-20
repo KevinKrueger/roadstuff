@@ -75,6 +75,18 @@ public class ModBlocks
             ()  -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
+    public static final RegistryObject<Block> NOTHROUGHROAD_SIGN = register("nothroughroad_sign",
+            ()  -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> TUNNEL_SIGN = register("tunnel_sign",
+            ()  -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> TUNNEL_END_SIGN = register("tunnel_end_sign",
+            ()  -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
     public static final RegistryObject<Block> GIVEWAY_SIGN = register("givewaysign",
             () -> new BaseInvertedTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
@@ -121,7 +133,15 @@ public class ModBlocks
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
-    public static final RegistryObject<Block> TWOSIDEDLANENARROWING_SIGNn = register("twosidedlanenarrowingsign",
+    public static final RegistryObject<Block> TWOSIDEDLANENARROWING_SIGN = register("twosidedlanenarrowingsign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> GROUNDHUMP_SIGN = register("groundhump_sign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> SHORE_SIGN = register("shore_sign",
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 

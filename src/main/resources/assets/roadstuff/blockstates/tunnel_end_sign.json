@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/tunnel_end_sign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/tunnel_end_sign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/tunnel_end_sign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/tunnel_end_sign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/tunnel_end_sign",
+      "y": 270
+    }
+  }
+}
