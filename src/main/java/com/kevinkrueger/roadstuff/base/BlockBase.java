@@ -88,7 +88,7 @@ public class BlockBase extends Block
     {
         super.addInformation(stack, worldIn, tooltip, flagIn);
 
-        if(_toolTipText != null)
+        if(!_toolTipText.equals(""))
             tooltip.add(new StringTextComponent(_toolTipText));
     }
 

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/prohibitionofalltypessign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/prohibitionofalltypessign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/prohibitionofalltypessign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/prohibitionofalltypessign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/prohibitionofalltypessign",
+      "y": 270
+    }
+  }
+}

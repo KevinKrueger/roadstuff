@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/busstopsign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/busstopsign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/busstopsign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/busstopsign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/busstopsign",
+      "y": 270
+    }
+  }
+}
