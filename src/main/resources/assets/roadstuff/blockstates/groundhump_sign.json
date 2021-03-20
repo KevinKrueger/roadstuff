@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/groundhump_sign"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/groundhump_sign"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/groundhump_sign",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/groundhump_sign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/groundhump_sign",
+      "y": 270
+    }
+  }
+}
