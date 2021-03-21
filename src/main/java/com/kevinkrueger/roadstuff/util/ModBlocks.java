@@ -54,6 +54,9 @@ public class ModBlocks
             () -> new BaseRoundSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
+    public static final RegistryObject<Block> STOPBAN_SIGN = register("stopban_sign",
+            () -> new BaseRoundSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> PROHIBITIONOFALLTPYES_SIGN = register("prohibitionofalltypessign",
             () -> new BaseRoundSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
@@ -84,6 +87,10 @@ public class ModBlocks
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> TUNNEL_END_SIGN = register("tunnel_end_sign",
+            ()  -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> GASSTATION_SIGN = register("gasstation_sign",
             ()  -> new BaseRectangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
@@ -142,6 +149,18 @@ public class ModBlocks
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> SHORE_SIGN = register("shore_sign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> RIDERS_SIGN = register("riders_sign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> AIRPLANES_SIGN = register("airplanes_sign",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> TRAFFICLIGHTS_SIGN = register("trafficlights_sign",
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
