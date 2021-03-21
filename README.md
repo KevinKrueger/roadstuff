@@ -1,10 +1,10 @@
 # RoadStuff Mod
-![Version](https://img.shields.io/badge/version-1.16.4%2F5-blue) ![GitHub all releases](https://img.shields.io/github/downloads/KevinKrueger/roadstuff/total)
+![Version](https://img.shields.io/badge/version-1.16.4%2F5-blue)
 
 
 
 ## Project:
-![GitHub](https://img.shields.io/github/license/KevinKrueger/roadstuff) ![GitHub last commit](https://img.shields.io/github/last-commit/KevinKrueger/roadstuff) ![Maintenance](https://img.shields.io/maintenance/yes/2022) ![GitHub issues](https://img.shields.io/github/issues/KevinKrueger/roadstuff)  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/KevinKrueger/roadstuff)
+![GitHub](https://img.shields.io/github/license/KevinKrueger/roadstuff)  ![Maintenance](https://img.shields.io/maintenance/yes/2022)
 > This mod is really new!
 > Much more coming Soon!
 
