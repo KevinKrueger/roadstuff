@@ -101,19 +101,20 @@ public class BlockBase extends Block
     /**
      * @param text Individual customizable text! Bsp: TextFormatting.GRAY + "Hello " + TextFormatting.Orange + "World"
      */
-    public void setTooltip(String text)
+    public BlockBase setTooltip(String text)
     {
         if(text != null)
             this._toolTipText = TextFormatting.GRAY +  text;
         else
             this._toolTipText = _toolTipERROR;
+        return this;
     }
 
     /**
      * @param text Text of the ToolTip
      * @param color Color of the text. : WHITE(Default)
      */
-    public void setTooltip(String text, TextFormatting color)
+    public BlockBase setTooltip(String text, TextFormatting color)
     {
         //###############
         // Color
@@ -130,5 +131,7 @@ public class BlockBase extends Block
             this._toolTipText = this._toolTipColor + text;
         else
             this._toolTipText = _toolTipERROR;
+
+        return this;
     }
 }

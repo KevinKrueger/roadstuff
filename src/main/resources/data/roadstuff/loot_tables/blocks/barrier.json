@@ -1,12 +1,17 @@
 {
   "type": "minecraft:block",
-  "polls": [
+  "pools": [
     {
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "roadstuff:barrier"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "roadstuff:barrier"
+            }
+          ]
         }
       ]
     }
