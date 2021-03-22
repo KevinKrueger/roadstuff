@@ -41,5 +41,6 @@
   "block.roadstuff.prohibitionofalltypessign" : "Prohibition Of All Types Sign",
   "block.roadstuff.restrictedstopsign" : "Restricted Stop Sign",
   "block.roadstuff.constructionsitesign" : "Construction Site Sign",
-  "block.roadstuff.trafficcirclesign" : "Traffic Circle Sign"
+  "block.roadstuff.trafficcirclesign" : "Traffic Circle Sign",
+  "block.roadstuff.rightofwaysign" : "Right Of Way Sign"
 }

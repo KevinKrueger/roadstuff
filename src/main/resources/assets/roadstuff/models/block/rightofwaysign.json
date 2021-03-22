@@ -1,0 +1,75 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "roadstuff:block/rightofwaysign",
+  "textures": {
+    "1": "roadstuff:block/arriere",
+    "2": "roadstuff:block/rightofwaysign",
+    "particle": "roadstuff:block/rightofwaysign"
+  },
+  "elements": [
+    {
+      "from": [3.20711, 2.20711, 7],
+      "to": [14.20711, 13.20711, 9],
+      "rotation": {"angle": 45, "axis": "z", "origin": [8, 7, 8.75]},
+      "faces": {
+        "north": {"uv": [0, 0, 15.94667, 16], "texture": "#2"},
+        "east": {"uv": [0.5, 0.25, 0.75, 15.5], "texture": "#1"},
+        "south": {"uv": [0.5, 15.5, 15.5, 0.25], "rotation": 180, "texture": "#1"},
+        "west": {"uv": [15.25, 0.25, 15.5, 15.5], "texture": "#1"},
+        "up": {"uv": [15.5, 0.25, 0.5, 0.5], "texture": "#1"},
+        "down": {"uv": [0.5, 15.25, 15.5, 15.5], "rotation": 180, "texture": "#1"}
+      }
+    },
+    {
+      "from": [7, 0, 9],
+      "to": [9, 12, 10],
+      "rotation": {"angle": 0, "axis": "y", "origin": [8, 7, 8.75]},
+      "faces": {
+        "north": {"uv": [0, 0, 2, 12], "texture": "#1"},
+        "east": {"uv": [0, 0, 1, 12], "texture": "#1"},
+        "south": {"uv": [0, 0, 2, 12], "texture": "#1"},
+        "west": {"uv": [0, 0, 1, 12], "texture": "#1"},
+        "up": {"uv": [0, 0, 2, 1], "texture": "#1"},
+        "down": {"uv": [0, 0, 2, 1], "texture": "#1"}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 45, 0],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, 225, 0],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "ground": {
+      "translation": [0, 3, 0],
+      "scale": [0.25, 0.25, 0.25]
+    },
+    "gui": {
+      "rotation": [30, 225, 0],
+      "scale": [0.625, 0.625, 0.625]
+    },
+    "fixed": {
+      "scale": [0.5, 0.5, 0.5]
+    }
+  },
+  "groups": [
+    {
+      "name": "VoxelShapes",
+      "origin": [8, 7, 8.75],
+      "children": [0, 1]
+    }
+  ]
+}
