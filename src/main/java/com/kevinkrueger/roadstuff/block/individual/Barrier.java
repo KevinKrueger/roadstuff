@@ -1,6 +1,7 @@
 package com.kevinkrueger.roadstuff.block.individual;
 
 import com.kevinkrueger.roadstuff.base.BlockBase;
+import com.kevinkrueger.roadstuff.base.CalculateShape;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
@@ -14,49 +15,25 @@ import java.util.stream.Stream;
 
 public class Barrier extends BlockBase {
 
+    CalculateShape calc =new CalculateShape();
     private static final VoxelShape SHAPE_N = Stream.of(
             Block.makeCuboidShape(0, 0, 0, 2, 16, 2),
             Block.makeCuboidShape(2, 12, 1, 14, 15, 1),
             Block.makeCuboidShape(14, 0, 0, 16, 16, 2)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
-    private static final VoxelShape SHAPE_W = Stream.of(
-            Block.makeCuboidShape(0, 0, 14, 2, 16, 16),
-            Block.makeCuboidShape(1, 12, 2, 1, 15, 14),
-            Block.makeCuboidShape(0, 0, 0, 2, 16, 2)
-    ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
-    private static final VoxelShape SHAPE_O = Stream.of(
-            Block.makeCuboidShape(14, 0, 0, 16, 16, 2),
-            Block.makeCuboidShape(15, 12, 2, 15, 15, 14),
-            Block.makeCuboidShape(14, 0, 14, 16, 16, 16)
-    ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
-
-    private static final VoxelShape SHAPE_S = Stream.of(
-            Block.makeCuboidShape(14, 0, 14, 16, 16, 16),
-            Block.makeCuboidShape(2, 12, 15, 14, 15, 15),
-            Block.makeCuboidShape(0, 0, 14, 2, 16, 16)
-    ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
 
     public Barrier(Properties properies)
     {
         super(properies);
+        calc.runCalculation(SHAPE_N);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
     {
-        switch (state.get(FACING))
-        {
-            case SOUTH:
-                return SHAPE_S;
-            case WEST:
-                return SHAPE_W;
-            case EAST:
-                return SHAPE_O;
-            default:
-                return SHAPE_N;
-        }
+        return calc.SHAPES.get(state.get(FACING));
     }
 }
