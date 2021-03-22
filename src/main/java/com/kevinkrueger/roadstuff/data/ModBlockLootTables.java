@@ -1,11 +1,17 @@
 package com.kevinkrueger.roadstuff.data;
 
+import com.kevinkrueger.roadstuff.block.base.*;
+import com.kevinkrueger.roadstuff.block.individual.*;
 import com.kevinkrueger.roadstuff.util.ModBlocks;
 import com.kevinkrueger.roadstuff.util.Registration;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.data.loot.BlockLootTables;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 
+import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
 public class ModBlockLootTables extends BlockLootTables {
@@ -13,15 +19,7 @@ public class ModBlockLootTables extends BlockLootTables {
     @Override
     protected void addTables()
     {
-
-        Object[] blocks = Registration.BLOCKS.getEntries().toArray();
-        for (Object object : blocks)
-        {
-            Block block = (Block) object;
-            this.registerDropSelfLootTable(block);
-        }
-
-        ///this.registerDropSelfLootTable(ModBlocks.BUSSTOPSIGN.get());
+        getKnownBlocks().forEach(this::registerDropSelfLootTable);
     }
 
     @Override
