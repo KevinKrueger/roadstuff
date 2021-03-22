@@ -13,7 +13,15 @@ public class ModBlockLootTables extends BlockLootTables {
     @Override
     protected void addTables()
     {
-        this.registerDropSelfLootTable(ModBlocks.BUSSTOPSIGN.get());
+
+        Object[] blocks = Registration.BLOCKS.getEntries().toArray();
+        for (Object object : blocks)
+        {
+            Block block = (Block) object;
+            this.registerDropSelfLootTable(block);
+        }
+
+        ///this.registerDropSelfLootTable(ModBlocks.BUSSTOPSIGN.get());
     }
 
     @Override

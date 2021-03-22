@@ -1,13 +1,11 @@
 package com.kevinkrueger.roadstuff.data;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
-import com.kevinkrueger.roadstuff.util.ModBlocks;
 import com.kevinkrueger.roadstuff.util.Registration;
+import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-
-import java.util.Arrays;
 
 public class ModBlockStateProvider extends BlockStateProvider
 {
@@ -19,6 +17,12 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        simpleBlock(ModBlocks.BUSSTOPSIGN.get());
+        Object[] blocks = Registration.BLOCKS.getEntries().toArray();
+        for (Object object : blocks)
+        {
+            Block block = (Block) object;
+            simpleBlock(block);
+        }
+        //simpleBlock(ModBlocks.BUSSTOPSIGN.get());
     }
 }

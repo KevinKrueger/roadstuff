@@ -1,6 +1,8 @@
 package com.kevinkrueger.roadstuff.data;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
+import com.kevinkrueger.roadstuff.util.Registration;
+import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -14,7 +16,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        withExistingParent("busstopsign", modLoc("block/busstopsign"));
+
+
+        Object[] blocks = Registration.BLOCKS.getEntries().toArray();
+        for (Object object : blocks)
+        {
+            Block block = (Block) object;
+
+            withExistingParent(block.getRegistryName().toString(), modLoc("block/"+ block.getRegistryName().toString()));
+        }
+
+        /// withExistingParent("busstopsign", modLoc("block/busstopsign"));
 
 
 
