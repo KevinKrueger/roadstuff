@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "roadstuff:block/metall_stange",
+	"parent": "roadstuff:block/steel_pole",
 	"textures": {
 		"1": "roadstuff:block/arriere",
 		"particle": "roadstuff:block/arriere"

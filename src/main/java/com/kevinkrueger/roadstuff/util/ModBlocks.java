@@ -26,7 +26,7 @@ public class ModBlocks
     private static final float RESISTANCE_DEFAULT = 10f;
 
     // Registration
-    public static final RegistryObject<Block> METAL_POLE = register("metall_stange",
+    public static final RegistryObject<Block> STELL_POLE = register("steel_pole",
             () -> new MetalPole(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT, RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
