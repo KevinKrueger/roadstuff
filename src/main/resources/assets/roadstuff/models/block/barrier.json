@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "roadstuff:block/barrier",
 	"textures": {
-		"1": "roadstuff:block/barriertape",
+		"1": "roadstuff:block/barriertapestripe",
 		"2": "roadstuff:block/arriere",
-		"particle": "roadstuff:block/barriertape"
+		"particle": "roadstuff:block/barriertapestripe"
 	},
 	"elements": [
 		{

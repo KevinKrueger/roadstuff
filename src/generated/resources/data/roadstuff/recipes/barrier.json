@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PTP"
+  ],
+  "key": {
+    "T": {
+      "item": "roadstuff:barriertape"
+    },
+    "P": {
+      "item": "roadstuff:steel_pole"
+    }
+  },
+  "result": {
+    "item": "roadstuff:barrier"
+  }
+}

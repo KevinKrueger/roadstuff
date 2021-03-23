@@ -18,11 +18,14 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_INGOT = register("steel_ingot",
             () -> new SteelIngot(new Item.Properties().maxStackSize(10).isImmuneToFire()));
 
+    public static final RegistryObject<Item> BARRIER_TAPE = register("barriertape",
+            () -> new Item(new Item.Properties().maxStackSize(2)));
 
     // For init
     public static void register() { }
 
-    private static RegistryObject<Item> register(String name, Supplier<Item> sup) {
+    private static RegistryObject<Item> register(String name, Supplier<Item> sup)
+    {
         return Registration.ITEMS.register(name, () -> new Item(new Item.Properties().group(RoadStuff.ROAD_STUFF_TAB)));
     }
 }
