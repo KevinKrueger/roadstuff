@@ -1,14 +1,19 @@
 package com.kevinkrueger.roadstuff;
 
 import com.kevinkrueger.roadstuff.base.BasicTab;
+import com.kevinkrueger.roadstuff.events.ModEvents;
 import com.kevinkrueger.roadstuff.util.ModBlocks;
+import com.kevinkrueger.roadstuff.util.ModItems;
 import com.kevinkrueger.roadstuff.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -37,7 +42,12 @@ public class RoadStuff
         // Init
         Registration.init();
         ModBlocks.register();
+        ModItems.register();
+
         ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALK_SIGN.get()));
+
+        MinecraftForge.EVENT_BUS.register((new ModEvents()));
+
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

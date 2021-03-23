@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "C",
+    "C"
+  ],
+  "key": {
+    "C": {
+      "item": "roadstuff:steel_ingot"
+    }
+  },
+  "result": {
+    "item": "roadstuff:steel_pole"
+  }
+}

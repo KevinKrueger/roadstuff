@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "roadstuff:metall_stange"
+          "name": "roadstuff:steel_pole"
         }
       ],
       "conditions": [

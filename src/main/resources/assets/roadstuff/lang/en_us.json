@@ -1,6 +1,6 @@
 {
   "itemGroup.roadstuff" : "Road Stuff",
-  "block.roadstuff.metall_stange" : "Metal Pole",
+  "block.roadstuff.steel_pole" : "Steel Pole",
   "block.roadstuff.crosswalksign" : "Crosswalk Sign",
   "block.roadstuff.delineatorsign" : "Delineator Sign",
   "block.roadstuff.passageforbiddensign" : "Passage Forbidden Sign",
@@ -42,5 +42,10 @@
   "block.roadstuff.restrictedstopsign" : "Restricted Stop Sign",
   "block.roadstuff.constructionsitesign" : "Construction Site Sign",
   "block.roadstuff.trafficcirclesign" : "Traffic Circle Sign",
-  "block.roadstuff.rightofwaysign" : "Right Of Way Sign"
+  "block.roadstuff.rightofwaysign" : "Right Of Way Sign",
+
+
+
+
+  "item.roadstuff.steel_ingot" : "Steel Ingot"
 }
