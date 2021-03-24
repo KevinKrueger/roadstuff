@@ -12,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
 
+import java.rmi.registry.Registry;
 import java.util.function.Supplier;
 
 public class ModItems {
@@ -20,6 +21,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> BARRIER_TAPE = register("barriertape",
             () -> new Item(new Item.Properties().maxStackSize(2)));
+
+    public static final RegistryObject<Item> CARDBOARDTUBE = register("cardboardtube",
+            () -> new Item(new Item.Properties().maxStackSize(5)));
 
     // For init
     public static void register() { }

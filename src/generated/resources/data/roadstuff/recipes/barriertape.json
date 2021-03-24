@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WRR",
+    "RCR",
+    "RRW"
+  ],
+  "key": {
+    "C": {
+      "item": "roadstuff:cardboardtube"
+    },
+    "W": {
+      "item": "minecraft:white_dye"
+    },
+    "R": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "roadstuff:barriertape"
+  }
+}

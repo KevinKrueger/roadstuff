@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "roadstuff:guidecone"
+    ]
+  },
+  "criteria": {
+    "orange_dye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:orange_dye"
+          }
+        ]
+      }
+    },
+    "white_dye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:white_dye"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "roadstuff:guidecone"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "orange_dye",
+      "white_dye",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -48,5 +48,6 @@
 
 
   "item.roadstuff.steel_ingot" : "Steel Ingot",
-  "item.roadstuff.barriertape" : "Barrier Tape"
+  "item.roadstuff.barriertape" : "Barrier Tape",
+  "item.roadstuff.cardboardtube" : "Cardboard Tube"
 }
