@@ -5,9 +5,9 @@ import net.minecraft.item.ItemStack;
 
 import java.util.function.Supplier;
 
-/////////////////////////
-// Simplyfied ItemGroup
-/////////////////////////
+/**
+ *  Simplyfied ItemGroup
+ */
 public class BasicTab extends ItemGroup
 {
     private final Supplier<ItemStack> blockOrItem;
