@@ -2,33 +2,61 @@ package com.kevinkrueger.roadstuff.events;
 
 import com.kevinkrueger.roadstuff.util.ModItems;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ModEvents
-{
-    @Deprecated
+public class ModEvents {
+
+    // @Deprecated
+    // int steelCount =  ModItems.STEEL_INGOT.get().getMaxStackSize();
+    int steelSlots = 0;
+    private static final List<Integer> SteelSlotPosis = new ArrayList<>();
+
+    boolean devMode = false;
+
     @SubscribeEvent
-    public void OnSteel(TickEvent.PlayerTickEvent event)
-    {
+    public void OnSteel(TickEvent.PlayerTickEvent event) {
+        try {
+            if(devMode) {
+                PlayerInventory inv = event.player.inventory;
+                int count = inv.count(ModItems.STEEL_INGOT.get());
 
-        PlayerInventory inv = event.player.inventory;
-        int steelCount =  ModItems.STEEL_INGOT.get().getMaxStackSize();
 
-        Set<Item> test = new HashSet<>();
-        test.add(ModItems.STEEL_INGOT.get());
+                // Hat Item Stack
+                if (count > 10) {
+                    // Droppen
+                    inv.removeStackFromSlot(07);
 
-        if(inv.hasAny(test) && inv.count(ModItems.STEEL_INGOT.get()) > steelCount)
+                    event.player.dropItem(new ItemStack(ModItems.STEEL_INGOT.get(), 10), false, true);
+                }
+            }
+            // Slot auf Steel überprüfen
+            //if(inv.getStackInSlot(i).getItem() == stack.getItem())
+            //{
+            // Wenn ja
+            //    steelSlots += 1;
+            /// SteelSlotPosis.add(i);
+
+            //     System.out.print("Slot" + i);
+            // }
+
+
+        // Wenn es mehrere Slots gibt
+          /*  if(SteelSlotPosis.stream().count() > 1)
+            {
+                for(int i = 1; i < SteelSlotPosis.stream().count(); i++)
+                {
+                   /// inv.player.inventory.removeStackFromSlot(i);
+                }
+            }*/
+
+        }catch( Exception ignored)
         {
-            // TODO: Drop the Item ....
 
-            System.out.println("Das ist zu Schwer");
         }
     }
 }
