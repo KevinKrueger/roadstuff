@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " O ",
-    "WWW",
-    "OOO"
+    "WSW",
+    "OPO"
   ],
   "key": {
     "O": {
@@ -11,6 +11,12 @@
     },
     "W": {
       "item": "minecraft:white_dye"
+    },
+    "P": {
+      "item": "roadstuff:steel_plate"
+    },
+    "S": {
+      "item": "roadstuff:steel_ingot"
     }
   },
   "result": {

@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "paper": {
+    "minecraft:paper": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "paper",
+      "minecraft:paper",
       "has_the_recipe"
     ]
   ]

@@ -14,6 +14,7 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import org.lwjgl.system.CallbackI;
 
+import java.sql.ResultSet;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
@@ -136,9 +137,13 @@ public class ModBlocks
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
-    public static final RegistryObject<Block> ONESIDEDLANENARROWING_SIGN = register("onesidedlanenarrowingsign",
+    public static final RegistryObject<Block> ONESIDEDLANENARROWING_SIGN_RIGHT = register("onesidedlanenarrowingsign_right",
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> ONESIDEDLANENARROWING_SIGN_LEFT = register("onesidedlanenarrowingsign_left",
+            () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT, RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> TWOSIDEDLANENARROWING_SIGN = register("twosidedlanenarrowingsign",
             () -> new BaseTriangleSign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)

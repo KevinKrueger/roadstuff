@@ -20,7 +20,8 @@
   "block.roadstuff.rightcurvesign" : "Right Curve Sign",
   "block.roadstuff.leftcurvesign" : "Left Curve Sign",
   "block.roadstuff.twowaytrafficsign" : "Two-Way Traffic Sign",
-  "block.roadstuff.onesidedlanenarrowingsign" : "One-Sided Lane Narrowing",
+  "block.roadstuff.onesidedlanenarrowingsign_right" : "One-Sided Lane Narrowing Right",
+  "block.roadstuff.onesidedlanenarrowingsign_left" : "One-Sided Lane Narrowing Left",
   "block.roadstuff.twosidedlanenarrowingsign" : "Two-Sided Lane Narrowing",
   "block.roadstuff.groundhump_sign" : "Groundhump Sign",
   "block.roadstuff.shore_sign" : "Shore Sign",
@@ -49,5 +50,6 @@
 
   "item.roadstuff.steel_ingot" : "Steel Ingot",
   "item.roadstuff.barriertape" : "Barrier Tape",
-  "item.roadstuff.cardboardtube" : "Cardboard Tube"
+  "item.roadstuff.cardboardtube" : "Cardboard Tube",
+  "item.roadstuff.steel_plate" : "Steel Plate"
 }

@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "cardboardtube": {
+    "roadstuff:cardboardtube": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "cardboardtube",
+      "roadstuff:cardboardtube",
       "has_the_recipe"
     ]
   ]

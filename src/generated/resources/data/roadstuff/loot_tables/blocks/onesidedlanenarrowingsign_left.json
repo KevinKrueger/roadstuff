@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "roadstuff:onesidedlanenarrowingsign"
+          "name": "roadstuff:onesidedlanenarrowingsign_left"
         }
       ],
       "conditions": [

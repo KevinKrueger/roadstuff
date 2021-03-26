@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "orange_dye": {
+    "minecraft:orange_dye": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -16,12 +16,32 @@
         ]
       }
     },
-    "white_dye": {
+    "minecraft:white_dye": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "item": "minecraft:white_dye"
+          }
+        ]
+      }
+    },
+    "roadstuff:steel_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "roadstuff:steel_plate"
+          }
+        ]
+      }
+    },
+    "roadstuff:steel_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "roadstuff:steel_ingot"
           }
         ]
       }
@@ -35,8 +55,10 @@
   },
   "requirements": [
     [
-      "orange_dye",
-      "white_dye",
+      "minecraft:orange_dye",
+      "minecraft:white_dye",
+      "roadstuff:steel_plate",
+      "roadstuff:steel_ingot",
       "has_the_recipe"
     ]
   ]

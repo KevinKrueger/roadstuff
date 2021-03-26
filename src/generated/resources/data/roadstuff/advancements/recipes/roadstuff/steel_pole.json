@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "steel_ingot": {
+    "roadstuff:steel_ingot": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "steel_ingot",
+      "roadstuff:steel_ingot",
       "has_the_recipe"
     ]
   ]

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/onesidedlanenarrowingsign_left"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/onesidedlanenarrowingsign_left"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/onesidedlanenarrowingsign_left",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/onesidedlanenarrowingsign_left",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/onesidedlanenarrowingsign_left",
+      "y": 270
+    }
+  }
+}

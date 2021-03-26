@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "roadstuff:steel_ingot"
+    }
+  },
+  "result": {
+    "item": "roadstuff:steel_plate"
+  }
+}
