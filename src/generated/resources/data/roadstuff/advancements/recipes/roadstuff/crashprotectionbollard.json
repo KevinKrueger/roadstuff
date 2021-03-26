@@ -36,12 +36,12 @@
         ]
       }
     },
-    "roadstuff:steel_pole": {
+    "roadstuff:steelpole_signs": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "roadstuff:steel_pole"
+            "item": "roadstuff:steelpole_signs"
           }
         ]
       }
@@ -58,7 +58,7 @@
       "minecraft:orange_dye",
       "minecraft:white_dye",
       "roadstuff:steel_plate",
-      "roadstuff:steel_pole",
+      "roadstuff:steelpole_signs",
       "has_the_recipe"
     ]
   ]

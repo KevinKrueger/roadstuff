@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "roadstuff:steel_pole"
+          "name": "roadstuff:steelpole_signs"
         }
       ],
       "conditions": [

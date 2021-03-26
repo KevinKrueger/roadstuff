@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "roadstuff:block/steel_pole",
+	"parent": "roadstuff:block/steelpole_signs",
 	"textures": {
 		"1": "roadstuff:block/arriere",
 		"particle": "roadstuff:block/arriere"

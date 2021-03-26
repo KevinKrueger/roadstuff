@@ -1,18 +1,12 @@
 package com.kevinkrueger.roadstuff.util;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
-import com.kevinkrueger.roadstuff.base.ItemBase;
-import com.kevinkrueger.roadstuff.block.individual.MetalPole;
 import com.kevinkrueger.roadstuff.item.BarrierTape;
 import com.kevinkrueger.roadstuff.item.SteelIngot;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
-import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.RegistryObject;
 
-import java.rmi.registry.Registry;
 import java.util.function.Supplier;
 
 public class ModItems {

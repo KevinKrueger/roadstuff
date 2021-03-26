@@ -27,8 +27,12 @@ public class ModBlocks
     private static final float RESISTANCE_DEFAULT = 10f;
 
     // Registration
-    public static final RegistryObject<Block> STEEL_POLE = register("steel_pole",
-            () -> new MetalPole(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+    public static final RegistryObject<Block> STEELPOLE_SIGNS = register("steelpole_signs",
+            () -> new SteelPoleSigns(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT, RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
+    public static final RegistryObject<Block> STEELPOLE_LIGHTS =register("steelpole_lights",
+            () -> new SteelPoleLights(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT, RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
     public static final RegistryObject<Block> CROSSWALK_SIGN = register("crosswalksign",

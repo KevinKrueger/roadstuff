@@ -24,7 +24,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         /* Crafting Recipes */
 
         //Steel Pole (-> Steel Ingot)
-        ShapedRecipeBuilder.shapedRecipe(ModBlocks.STEEL_POLE.get())
+        ShapedRecipeBuilder.shapedRecipe(ModBlocks.STEELPOLE_SIGNS.get())
                 .key('C', ModItems.STEEL_INGOT.get())
                 .patternLine("C")
                 .patternLine("C")
@@ -36,7 +36,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         //Barrier (-> Barrier Tape, Steel Pole)
         ShapedRecipeBuilder.shapedRecipe(ModBlocks.BARRIER.get())
                 .key('T', ModItems.BARRIER_TAPE.get())
-                .key('P', ModBlocks.STEEL_POLE.get())
+                .key('P', ModBlocks.STEELPOLE_SIGNS.get())
                 .patternLine("PTP")
                 .addCriterion(Objects.requireNonNull(ModItems.BARRIER_TAPE.get().getRegistryName()).toString(), hasItem(ModItems.BARRIER_TAPE.get()))
                 .build(consumer);
@@ -81,14 +81,14 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .key('O', Items.ORANGE_DYE.getItem())
                 .key('W', Items.WHITE_DYE.getItem())
                 .key('P', ModItems.STEEL_PLATE.get())
-                .key('S', ModBlocks.STEEL_POLE.get())
+                .key('S', ModBlocks.STEELPOLE_SIGNS.get())
                 .patternLine("OSO")
                 .patternLine("WSW")
                 .patternLine("OPO")
                 .addCriterion(Objects.requireNonNull(Items.ORANGE_DYE.getItem().getRegistryName()).toString(), hasItem(Items.ORANGE_DYE.getItem()))
                 .addCriterion(Objects.requireNonNull(Items.WHITE_DYE.getItem().getRegistryName()).toString(), hasItem(Items.WHITE_DYE.getItem()))
                 .addCriterion(Objects.requireNonNull(ModItems.STEEL_PLATE.get().getRegistryName()).toString(), hasItem(ModItems.STEEL_PLATE.get()))
-                .addCriterion(Objects.requireNonNull(ModBlocks.STEEL_POLE.get().getRegistryName()).toString(), hasItem(ModBlocks.STEEL_POLE.get()))
+                .addCriterion(Objects.requireNonNull(ModBlocks.STEELPOLE_SIGNS.get().getRegistryName()).toString(), hasItem(ModBlocks.STEELPOLE_SIGNS.get()))
                 .build(consumer);
 
         //Steel Plate (-> Steel Ingot)
