@@ -1,5 +1,5 @@
 {
-  "parent": "roadstuff:block/onesidedlanenarrowingsign",
+  "parent": "roadstuff:block/onesidedlanenarrowingsign_right",
   "display": {
     "thirdperson": {
       "rotation": [

@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "roadstuff:steel_ingot"
+      "roadstuff:steel_plate"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "roadstuff:steel_ingot"
+        "recipe": "roadstuff:steel_plate"
       }
     }
   },

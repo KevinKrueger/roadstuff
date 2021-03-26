@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "O",
-    "W",
-    "O"
+    "OSO",
+    "WSW",
+    "OPO"
   ],
   "key": {
     "O": {
@@ -11,6 +11,12 @@
     },
     "W": {
       "item": "minecraft:white_dye"
+    },
+    "P": {
+      "item": "roadstuff:steel_plate"
+    },
+    "S": {
+      "item": "roadstuff:steel_pole"
     }
   },
   "result": {

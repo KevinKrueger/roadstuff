@@ -1,10 +1,10 @@
 {
-  "parent": "roadstuff:block/onesidedlanenarrowingsign",
+  "parent": "roadstuff:block/onesidedlanenarrowingsign_left",
   "textures": {
-    "all": "roadstuff:block/onesidedlanenarrowingsign",
-    "particle": "roadstuff:block/onesidedlanenarrowingsign",
+    "all": "roadstuff:block/onesidedlanenarrowingsign_left",
+    "particle": "roadstuff:block/onesidedlanenarrowingsign_left",
     "1": "roadstuff:block/arriere",
-    "2": "roadstuff:block/onesidedlanenarrowingsign"
+    "2": "roadstuff:block/onesidedlanenarrowingsign_left"
   },
   "elements": [
     {

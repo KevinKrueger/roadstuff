@@ -26,6 +26,9 @@ public class ModItems {
     public static final RegistryObject<Item> CARDBOARDTUBE = register("cardboardtube",
             () -> new Item(CreateProps().maxStackSize(5)));
 
+    public static final RegistryObject<Item> STEEL_PLATE = register("steel_plate",
+            () -> new Item(CreateProps().maxStackSize(10)));
+
     // For init
     public static void register() { }
 

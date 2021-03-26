@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "barriertape": {
+    "roadstuff:barriertape": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "barriertape",
+      "roadstuff:barriertape",
       "has_the_recipe"
     ]
   ]
