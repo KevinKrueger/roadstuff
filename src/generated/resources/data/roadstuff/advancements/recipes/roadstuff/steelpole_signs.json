@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "roadstuff:steel_pole"
+      "roadstuff:steelpole_signs"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "roadstuff:steel_pole"
+        "recipe": "roadstuff:steelpole_signs"
       }
     }
   },

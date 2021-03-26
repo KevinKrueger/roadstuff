@@ -17,8 +17,8 @@ public class StreetLight extends BlockBase
 {
     CalculateShape calc =new CalculateShape();
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.makeCuboidShape(7, 0, 8, 9, 16, 10),
-            Block.makeCuboidShape(7, 13, 4, 9, 15, 8),
+            Block.makeCuboidShape(7, 0, 7, 9, 16, 9),
+            Block.makeCuboidShape(7, 13, 4, 9, 15, 7),
             Block.makeCuboidShape(6, 13, 0, 10, 15, 1),
             Block.makeCuboidShape(6, 13, 3, 10, 15, 4),
             Block.makeCuboidShape(6, 13, 1, 7, 15, 3),

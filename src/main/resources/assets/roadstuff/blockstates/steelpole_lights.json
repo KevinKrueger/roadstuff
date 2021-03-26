@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/steelpole_lights"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/steelpole_lights"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/steelpole_lights",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/steelpole_lights",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/steelpole_lights",
+      "y": 270
+    }
+  }
+}

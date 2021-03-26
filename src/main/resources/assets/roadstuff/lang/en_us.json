@@ -1,6 +1,7 @@
 {
   "itemGroup.roadstuff" : "Road Stuff",
-  "block.roadstuff.steel_pole" : "Steel Pole",
+  "block.roadstuff.steelpole_signs" : "Steel Pole For Signs",
+  "block.roadstuff.steelpole_lights" : "Steel Pole For Lights",
   "block.roadstuff.crosswalksign" : "Crosswalk Sign",
   "block.roadstuff.delineatorsign" : "Delineator Sign",
   "block.roadstuff.passageforbiddensign" : "Passage Forbidden Sign",
