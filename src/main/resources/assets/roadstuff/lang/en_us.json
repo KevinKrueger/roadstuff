@@ -34,6 +34,7 @@
   "block.roadstuff.trafficlights_sign" : "Traffic Lights Sign",
   "block.roadstuff.gasstation_sign" : "Gas Station Sign",
   "block.roadstuff.streetlight" : "Street Light",
+  "block.roadstuff.doublestreetlight" : "Double Street Light",
   "block.roadstuff.crashprotectionbollard" : "Crash Protection Bollard",
   "block.roadstuff.warningtriangle" : "Warning Triangle",
   "block.roadstuff.warnbarque" : "Warnbarque",

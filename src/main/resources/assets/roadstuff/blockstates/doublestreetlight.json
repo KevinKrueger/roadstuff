@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "roadstuff:block/doublestreetlight"
+    },
+    "facing=north": {
+      "model": "roadstuff:block/doublestreetlight"
+    },
+    "facing=east": {
+      "model": "roadstuff:block/doublestreetlight",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "roadstuff:block/doublestreetlight",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "roadstuff:block/doublestreetlight",
+      "y": 270
+    }
+  }
+}

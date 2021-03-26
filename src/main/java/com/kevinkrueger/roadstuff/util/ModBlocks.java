@@ -106,12 +106,12 @@ public class ModBlocks
     public static final RegistryObject<Block> STREET_LIGHT = register("streetlight",
             () -> new StreetLight(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
-                    .setLightLevel(new ToIntFunction<BlockState>() {
-                        @Override
-                        public int applyAsInt(BlockState value) {
-                            return 15;
-                        }
-                    })));
+                    .setLightLevel(value -> 15)));
+
+    public static final RegistryObject<Block> DOUBLE_STREET_LIGHT = register("doublestreetlight",
+            () -> new DoubleStreetLight(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
+                    .setLightLevel(value -> 15)));
 
     public static final RegistryObject<Block> CRASH_PROTECTION_BOLLARD = register("crashprotectionbollard",
             () -> new CrashProtectionBollard(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
