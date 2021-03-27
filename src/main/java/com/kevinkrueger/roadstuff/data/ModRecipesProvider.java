@@ -23,15 +23,21 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     {
         /* Crafting Recipes */
 
-        //Steel Pole (-> Steel Ingot)
+        //Steel Pole for Signs (-> Steel Ingot)
         ShapedRecipeBuilder.shapedRecipe(ModBlocks.STEELPOLE_SIGNS.get())
-                .key('C', ModItems.STEEL_INGOT.get())
-                .patternLine("C")
-                .patternLine("C")
-                .patternLine("C")
+                .key('I', ModItems.STEEL_INGOT.get())
+                .patternLine("I")
+                .patternLine("I")
+                .patternLine("I")
                 .addCriterion(Objects.requireNonNull(ModItems.STEEL_INGOT.get().getRegistryName()).toString(), hasItem(ModItems.STEEL_INGOT.get()))
                 .build(consumer);
-        // TODO: getRegistryName
+
+        //Steel Pole for Lights (-> Steel Pole for Signs)
+        ShapedRecipeBuilder.shapedRecipe(ModBlocks.STEELPOLE_LIGHTS.get())
+                .key('S', ModBlocks.STEELPOLE_SIGNS.get())
+                .patternLine(" S ")
+                .addCriterion(Objects.requireNonNull(ModBlocks.STEELPOLE_SIGNS.get().getRegistryName()).toString(), hasItem(ModItems.STEEL_INGOT.get()))
+                .build(consumer);
 
         //Barrier (-> Barrier Tape, Steel Pole)
         ShapedRecipeBuilder.shapedRecipe(ModBlocks.BARRIER.get())

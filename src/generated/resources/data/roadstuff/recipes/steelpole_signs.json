@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "C",
-    "C",
-    "C"
+    "I",
+    "I",
+    "I"
   ],
   "key": {
-    "C": {
+    "I": {
       "item": "roadstuff:steel_ingot"
     }
   },
