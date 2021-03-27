@@ -10,11 +10,10 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
-import org.lwjgl.system.CallbackI;
 
-import java.sql.ResultSet;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
@@ -110,12 +109,14 @@ public class ModBlocks
     public static final RegistryObject<Block> STREET_LIGHT = register("streetlight",
             () -> new StreetLight(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
-                    .setLightLevel(value -> 15)));
+                    .setLightLevel(value -> 15))
+                    .setToolTipp( "Use: '"+ "Steel Pole For Lights" +"'", TextFormatting.RED));
 
     public static final RegistryObject<Block> DOUBLE_STREET_LIGHT = register("doublestreetlight",
             () -> new DoubleStreetLight(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
-                    .setLightLevel(value -> 15)));
+                    .setLightLevel(value -> 15))
+                    .setToolTipp( "Use: '"+ "Steel Pole For Lights" +"'", TextFormatting.RED));
 
     public static final RegistryObject<Block> CRASH_PROTECTION_BOLLARD = register("crashprotectionbollard",
             () -> new CrashProtectionBollard(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
