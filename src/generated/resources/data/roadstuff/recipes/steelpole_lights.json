@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "roadstuff:steelpole_signs"
+    }
+  },
+  "result": {
+    "item": "roadstuff:steelpole_lights"
+  }
+}
