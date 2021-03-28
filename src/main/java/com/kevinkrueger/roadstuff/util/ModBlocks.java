@@ -5,7 +5,6 @@ import com.kevinkrueger.roadstuff.block.base.*;
 import com.kevinkrueger.roadstuff.block.individual.*;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
@@ -15,7 +14,6 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
 public class ModBlocks
 {
@@ -177,22 +175,12 @@ public class ModBlocks
     public static final RegistryObject<Block> WARNING_TRIANGLE = register("warningtriangle",
             () -> new WarningTriangle(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
-                    .setLightLevel(new ToIntFunction<BlockState>() {
-                        @Override
-                        public int applyAsInt(BlockState value) {
-                            return 5;
-                        }
-                    })));
+                    .setLightLevel(value -> 5)));
 
     public static final RegistryObject<Block> WARNBARQUE = register("warnbarque",
             () -> new Warnbarque(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)
-                    .setLightLevel(new ToIntFunction<BlockState>() {
-                        @Override
-                        public int applyAsInt(BlockState value) {
-                            return 12;
-                        }
-                    })));
+                    .setLightLevel(value -> 12)));
 
     public static final RegistryObject<Block> BARRIER = register("barrier",
             () -> new Barrier(AbstractBlock.Properties.create(MATERIAL_DEFAULT)

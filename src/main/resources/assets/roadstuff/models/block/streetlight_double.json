@@ -221,9 +221,9 @@
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"gui": {
-			"rotation": [28, 134, 0],
-			"translation": [0.5, -0.5, 0],
-			"scale": [0.7, 0.7, 0.7]
+			"rotation": [9, 114, 0],
+			"translation": [0.25, -0.5, -9.75],
+			"scale": [0.5, 0.5, 0.5]
 		},
 		"fixed": {
 			"rotation": [0, 90, 0],

@@ -98,6 +98,30 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .addCriterion(Objects.requireNonNull(ModItems.STEEL_INGOT.get().getRegistryName()).toString(), hasItem(ModItems.STEEL_INGOT.get()))
                 .build(consumer);
 
+        ShapedRecipeBuilder.shapedRecipe(ModItems.LIGHTBULB.get(), 2)
+                .key('P', Items.GLASS_PANE.getItem())
+                .key('T', Items.REDSTONE_TORCH.getItem())
+                .key('I', Items.IRON_INGOT.getItem())
+                .patternLine("PPP")
+                .patternLine("PTP")
+                .patternLine(" I ")
+                .addCriterion(Objects.requireNonNull(Items.REDSTONE_TORCH.getItem().getRegistryName()).toString(), hasItem(Items.REDSTONE_TORCH.getItem()))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ModBlocks.STREET_LIGHT.get())
+                .key('S', ModItems.STEEL_INGOT.get())
+                .key('L', ModItems.LIGHTBULB.get())
+                .patternLine("SSS")
+                .patternLine("SLS")
+                .patternLine("  S")
+                .addCriterion(Objects.requireNonNull(Items.REDSTONE_TORCH.getItem().getRegistryName()).toString(), hasItem(Items.REDSTONE_TORCH.getItem()))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ModBlocks.DOUBLE_STREET_LIGHT.get())
+                .key('S', ModBlocks.STREET_LIGHT.get().asItem())
+                .patternLine("SS")
+                .addCriterion(Objects.requireNonNull(Items.REDSTONE_TORCH.getItem().getRegistryName()).toString(), hasItem(Items.REDSTONE_TORCH.getItem()))
+                .build(consumer);
 
         /* Smelting Recipes */
 
