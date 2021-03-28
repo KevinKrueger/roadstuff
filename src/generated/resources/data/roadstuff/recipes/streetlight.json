@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SLS",
+    "  S"
+  ],
+  "key": {
+    "S": {
+      "item": "roadstuff:steel_ingot"
+    },
+    "L": {
+      "item": "roadstuff:lightbulb"
+    }
+  },
+  "result": {
+    "item": "roadstuff:streetlight"
+  }
+}

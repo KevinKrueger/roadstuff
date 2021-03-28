@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "roadstuff:streetlight"
+    }
+  },
+  "result": {
+    "item": "roadstuff:doublestreetlight"
+  }
+}

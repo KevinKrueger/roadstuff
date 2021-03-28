@@ -23,6 +23,11 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_PLATE = register("steel_plate",
             () -> new Item(CreateProps().maxStackSize(10)));
 
+
+    public static final RegistryObject<Item> LIGHTBULB = register("lightbulb",
+            () -> new Item(CreateProps()));
+
+
     // For init
     public static void register() { }
 
