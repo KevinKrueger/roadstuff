@@ -7,9 +7,10 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class CalculateShape
 {
-    public Map<Direction, VoxelShape> SHAPES = null;
+    public Map<Direction, VoxelShape> SHAPES;
 
     public CalculateShape()
     {

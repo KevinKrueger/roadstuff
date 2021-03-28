@@ -3,6 +3,7 @@ package com.kevinkrueger.roadstuff;
 import com.kevinkrueger.roadstuff.base.BasicTab;
 import com.kevinkrueger.roadstuff.events.ModEvents;
 import com.kevinkrueger.roadstuff.util.ModBlocks;
+import com.kevinkrueger.roadstuff.util.ModContainers;
 import com.kevinkrueger.roadstuff.util.ModItems;
 import com.kevinkrueger.roadstuff.util.Registration;
 import net.minecraft.block.Block;
@@ -43,6 +44,7 @@ public class RoadStuff
         Registration.init();
         ModBlocks.register();
         ModItems.register();
+        ModContainers.register();
 
         ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALK_SIGN.get()));
 
