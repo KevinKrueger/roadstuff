@@ -215,6 +215,10 @@ public class ModBlocks
             () -> new RightOfWaySign(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
+    public static final RegistryObject<Block> STREETLIGHT_STONESLAB = register("streetlight_stoneslab",
+            () -> new BasePoleSlab(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
     public static final RegistryObject<Block> RSCRAFTINGTABLE = register("rscraftingtable",
             () -> new RSCraftingTable(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));

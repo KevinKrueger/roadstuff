@@ -104,6 +104,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .addCriterion(Objects.requireNonNull(ModItems.STEEL_INGOT.get().getRegistryName()).toString(), hasItem(ModItems.STEEL_INGOT.get()))
                 .build(consumer);
 
+        // Light Bulb (-> Glass Pane, Redstone Torch, Iron Ingot)
         ShapedRecipeBuilder.shapedRecipe(ModItems.LIGHTBULB.get(), 2)
                 .key('P', Items.GLASS_PANE.getItem())
                 .key('T', Items.REDSTONE_TORCH.getItem())
@@ -114,6 +115,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .addCriterion(Objects.requireNonNull(Items.REDSTONE_TORCH.getItem().getRegistryName()).toString(), hasItem(Items.REDSTONE_TORCH.getItem()))
                 .build(consumer);
 
+        //Street Light (-> Steel Ingot, Light Bulb)
         ShapedRecipeBuilder.shapedRecipe(ModBlocks.STREET_LIGHT.get())
                 .key('S', ModItems.STEEL_INGOT.get())
                 .key('L', ModItems.LIGHTBULB.get())
@@ -123,6 +125,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .addCriterion(Objects.requireNonNull(Items.REDSTONE_TORCH.getItem().getRegistryName()).toString(), hasItem(Items.REDSTONE_TORCH.getItem()))
                 .build(consumer);
 
+        //Double Street Light (-> Street Light)
         ShapedRecipeBuilder.shapedRecipe(ModBlocks.DOUBLE_STREET_LIGHT.get())
                 .key('S', ModBlocks.STREET_LIGHT.get().asItem())
                 .patternLine("SS")
