@@ -1,7 +1,10 @@
 package com.kevinkrueger.roadstuff.block.individual;
 
+import com.kevinkrueger.roadstuff.RoadStuff;
 import com.kevinkrueger.roadstuff.base.BlockBase;
 import com.kevinkrueger.roadstuff.container.RSCraftingContainer;
+import com.kevinkrueger.roadstuff.tileentity.RSCraftingTileEntity;
+import com.kevinkrueger.roadstuff.util.ModTileEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -15,10 +18,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
-
-import javax.annotation.Nullable;
 
 public class RSCraftingTable extends BlockBase {
     public RSCraftingTable(Properties properties) {
@@ -26,27 +28,39 @@ public class RSCraftingTable extends BlockBase {
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-        if(!worldIn.isRemote())
-        {
-            TileEntity tileEntity = worldIn.getTileEntity(pos);
-            INamedContainerProvider containerProvider = new INamedContainerProvider() {
-                @Override
-                public ITextComponent getDisplayName() {
-                    return new TranslationTextComponent("screen.roadstuff.rscraftingtable");
-                }
+    public boolean hasTileEntity(BlockState state) {
+        return true;
+    }
 
-                @Nullable
-                @Override
-                public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-                    return new RSCraftingContainer(i, worldIn, pos, playerInventory, playerEntity);
-                }
-            };
+    @Override
+    public TileEntity createTileEntity(BlockState state, IBlockReader world) {
+        return ModTileEntity.RSCRAFTINGTABLE_ENTITY_TPYE.get().create();
+    }
 
-            NetworkHooks.openGui((ServerPlayerEntity) player, containerProvider,tileEntity.getPos());
-        }else
+    @SuppressWarnings("deprecation")
+    @Override
+    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos,
+                                             PlayerEntity player, Hand hand, BlockRayTraceResult trace) {
+        if (!world.isRemote())
         {
-            throw new IllegalStateException("Our Container provider is missing!");
+            TileEntity tileEntity = world.getTileEntity(pos);
+            if (tileEntity instanceof RSCraftingTileEntity)
+            {
+                INamedContainerProvider containerProvider = new INamedContainerProvider() {
+                    @Override
+                    public ITextComponent getDisplayName() {
+                        return new TranslationTextComponent("screen."+ RoadStuff.MOD_ID +".rscraftingtable");
+                    }
+
+                    @Override
+                    public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
+                        return new RSCraftingContainer(i, world, pos, playerInventory, playerEntity);
+                    }
+                };
+                NetworkHooks.openGui((ServerPlayerEntity) player, containerProvider, tileEntity.getPos());
+            } else {
+                throw new IllegalStateException("Our named container provider is missing!");
+            }
         }
 
         return ActionResultType.SUCCESS;

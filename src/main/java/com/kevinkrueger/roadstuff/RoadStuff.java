@@ -2,19 +2,19 @@ package com.kevinkrueger.roadstuff;
 
 import com.kevinkrueger.roadstuff.base.BasicTab;
 import com.kevinkrueger.roadstuff.events.ModEvents;
-import com.kevinkrueger.roadstuff.util.ModBlocks;
-import com.kevinkrueger.roadstuff.util.ModContainers;
-import com.kevinkrueger.roadstuff.util.ModItems;
-import com.kevinkrueger.roadstuff.util.Registration;
-import net.minecraft.block.Block;
-import net.minecraft.item.*;
-import net.minecraft.util.NonNullList;
+import com.kevinkrueger.roadstuff.proxy.ClientProxy;
+import com.kevinkrueger.roadstuff.proxy.IProxy;
+import com.kevinkrueger.roadstuff.proxy.ServerProxy;
+import com.kevinkrueger.roadstuff.screens.RSCraftingTableScreen;
+import com.kevinkrueger.roadstuff.util.*;
+import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -37,19 +37,23 @@ public class RoadStuff
     public static final String MOD_VER = "1.0.0";
     public static SimpleChannel SIMPLE_CHANNEL;
     public static BasicTab ROAD_STUFF_TAB;
+    public static IProxy proxy;
 
     public RoadStuff()
     {
+        // Proxy
+        proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> ServerProxy::new);
+
         // Init
         Registration.init();
+
         ModBlocks.register();
         ModItems.register();
+        ModTileEntity.register();
         ModContainers.register();
-
         ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALK_SIGN.get()));
 
         MinecraftForge.EVENT_BUS.register((new ModEvents()));
-
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -62,7 +66,7 @@ public class RoadStuff
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // Nothing to do...
+        proxy.init();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
@@ -77,15 +81,4 @@ public class RoadStuff
         // do something when the server starts
         LOGGER.info("RoadStuff is ready!");
     }
-
-    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
-    // Event bus for receiving Registry Events)
-   /*@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents {
-        @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            // register a new block here
-            LOGGER.info("HELLO from Register Block");
-        }
-    }*/
 }

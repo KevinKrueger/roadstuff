@@ -9,14 +9,13 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class ModContainers
 {
-
-    public static final RegistryObject<ContainerType<RSCraftingContainer>> RSCRAFTING_CONTAINER
-            = Registration.CONATINERS.register("rscrafting_container",
-            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+    public static final RegistryObject<ContainerType<RSCraftingContainer>> RSCRAFTINGTABLE_CONTAINER
+            = Registration.CONATINERS.register("rscraftingtable_container",
+            () -> IForgeContainerType.create((windowId, inv, data) -> {
                 BlockPos pos = data.readBlockPos();
                 World world = inv.player.getEntityWorld();
                 return new RSCraftingContainer(windowId, world, pos, inv, inv.player);
-            })));
+            }));
 
 
     public static void register(){}
