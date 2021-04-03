@@ -1,24 +1,37 @@
 {
   "variants": {
-    "normal": {
+    "facing=north,has_sign=true": {
+      "model": "roadstuff:block/streetlight_stoneslab_pole"
+    },
+    "facing=north,has_sign=false": {
       "model": "roadstuff:block/streetlight_stoneslab"
     },
-    "facing=north": {
-      "model": "roadstuff:block/streetlight_stoneslab"
+
+    "facing=east,has_sign=true": {
+      "model": "roadstuff:block/streetlight_stoneslab_pole",
+      "y": 90
     },
-    "facing=east": {
+    "facing=east,has_sign=false": {
       "model": "roadstuff:block/streetlight_stoneslab",
       "y": 90
     },
-    "facing=south": {
+
+    "facing=south,has_sign=true": {
+      "model": "roadstuff:block/streetlight_stoneslab_pole",
+      "y": 180
+    },
+    "facing=south,has_sign=false": {
       "model": "roadstuff:block/streetlight_stoneslab",
       "y": 180
     },
-    "facing=west": {
-      "model": "roadstuff:block/streetlight_stoneslab",
+
+    "facing=west,has_sign=true": {
+      "model": "roadstuff:block/streetlight_stoneslab_pole",
       "y": 270
     },
-    "has_sign=true": { "model": "roadstuff:block/streetlight_stoneslab_pole" },
-    "has_sign=false": { "model": "roadstuff:block/streetlight_stoneslab" }
+    "facing=west,has_sign=false": {
+      "model": "roadstuff:block/streetlight_stoneslab",
+      "y": 270
+    }
   }
 }
