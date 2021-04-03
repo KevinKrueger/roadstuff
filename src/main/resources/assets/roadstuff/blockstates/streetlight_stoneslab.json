@@ -17,6 +17,8 @@
     "facing=west": {
       "model": "roadstuff:block/streetlight_stoneslab",
       "y": 270
-    }
+    },
+    "has_sign=true": { "model": "roadstuff:block/streetlight_stoneslab_pole" },
+    "has_sign=false": { "model": "roadstuff:block/streetlight_stoneslab" }
   }
 }

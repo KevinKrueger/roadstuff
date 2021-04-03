@@ -37,7 +37,13 @@ public class BasePoleSlab extends BlockBase
     public BasePoleSlab(Properties properties)
     {
         super(properties);
+        setDefaultState(getDefaultState().with(HAS_SIGN, false));
         calc.runCalculation(SHAPE_N);
+    }
+    @Override
+    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
+    {
+        return calc.SHAPES.get(state.get(FACING));
     }
     @SuppressWarnings("deprecation")
     @Override
@@ -64,9 +70,5 @@ public class BasePoleSlab extends BlockBase
     }
 
 
-    @Override
-    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
-    {
-        return calc.SHAPES.get(state.get(FACING));
-    }
+
 }
