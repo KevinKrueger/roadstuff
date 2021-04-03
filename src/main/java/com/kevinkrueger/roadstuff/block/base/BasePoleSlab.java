@@ -2,19 +2,30 @@ package com.kevinkrueger.roadstuff.block.base;
 
 import com.kevinkrueger.roadstuff.base.BlockBase;
 import com.kevinkrueger.roadstuff.base.CalculateShape;
+import com.kevinkrueger.roadstuff.util.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 
 import java.util.stream.Stream;
 
 public class BasePoleSlab extends BlockBase
 {
+
+    public static final BooleanProperty HAS_SIGN = BooleanProperty.create("has_sign");
+
     CalculateShape calc = new CalculateShape();
     private static final VoxelShape SHAPE_N = Stream.of(
             Block.makeCuboidShape(0, 0, 0, 16, 8, 7),
@@ -28,6 +39,30 @@ public class BasePoleSlab extends BlockBase
         super(properties);
         calc.runCalculation(SHAPE_N);
     }
+    @SuppressWarnings("deprecation")
+    @Override
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit)
+    {
+        if(worldIn.isRemote())
+        {
+            if(player.getHeldItemMainhand().getItem() == ModBlocks.STEELPOLE_LIGHTS.get().asItem())
+            {
+                // Blockstate ändern
+                worldIn.setBlockState(pos, state.with(HAS_SIGN, true));
+                player.getHeldItemMainhand().shrink(1);
+            }
+        }
+
+        return ActionResultType.SUCCESS;
+    }
+
+    @Override
+    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder)
+    {
+        builder.add(HAS_SIGN);
+        super.fillStateContainer(builder);
+    }
+
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
