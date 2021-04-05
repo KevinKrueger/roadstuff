@@ -1,0 +1,75 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "roadstuff:block/cobblestone",
+		"particle": "roadstuff:block/cobblestone"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 8, 7],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "texture": "#0"},
+				"east": {"uv": [9, 0, 16, 8], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 8], "texture": "#0"},
+				"west": {"uv": [0, 8, 7, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 7.01604], "texture": "#0"},
+				"down": {"uv": [0, 9.06952, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 0, 9],
+			"to": [16, 8, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "texture": "#0"},
+				"east": {"uv": [0, 0, 7, 8], "texture": "#0"},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#0"},
+				"west": {"uv": [9, 8, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 9.06952, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 7.01604], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 0, 7],
+			"to": [7, 8, 9],
+			"faces": {
+				"north": {"uv": [3.8593, 2.41206, 14.59296, 13.78894], "texture": "#0"},
+				"east": {"uv": [8, 0, 10, 8], "texture": "#0"},
+				"south": {"uv": [2.33166, 2.57286, 15.15578, 13.38693], "texture": "#0"},
+				"west": {"uv": [7, 8, 9, 16], "texture": "#0"},
+				"up": {"uv": [0, 7.01604, 7.01604, 9.06952], "texture": "#0"},
+				"down": {"uv": [0, 7.01604, 7.01604, 9.06952], "texture": "#0"}
+			}
+		},
+		{
+			"from": [9, 0, 7],
+			"to": [16, 8, 9],
+			"faces": {
+				"north": {"uv": [2.53266, 2.73367, 14.79397, 13.50754], "texture": "#0"},
+				"east": {"uv": [7, 0, 9, 8], "texture": "#0"},
+				"south": {"uv": [2.33166, 2.57286, 14.95477, 13.34673], "texture": "#0"},
+				"west": {"uv": [9, 0, 11, 8], "texture": "#0"},
+				"up": {"uv": [9.15508, 7.01604, 16, 9.06952], "texture": "#0"},
+				"down": {"uv": [9.06952, 6.93048, 16, 8.98396], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [26, -50, 0],
+			"translation": [0.5, 0.25, 0],
+			"scale": [0.6, 0.6, 0.6]
+		}
+	},
+	"groups": [
+		{
+			"name": "VoxelShapes",
+			"origin": [0, 0, 0],
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

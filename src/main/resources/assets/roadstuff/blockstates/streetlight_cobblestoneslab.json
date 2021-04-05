@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "facing=north,has_pole=true": {
+      "model": "roadstuff:block/streetlight_cobblestoneslab_pole"
+    },
+    "facing=north,has_pole=false": {
+      "model": "roadstuff:block/streetlight_cobblestoneslab"
+    },
+
+    "facing=east,has_pole=true": {
+      "model": "roadstuff:block/streetlight_cobblestoneslab_pole",
+      "y": 90
+    },
+    "facing=east,has_pole=false": {
+      "model": "roadstuff:block/streetlight_cobblestoneslab",
+      "y": 90
+    },
+
+    "facing=south,has_pole=true": {
+      "model": "roadstuff:block/streetlight_cobblestoneslab_pole",
+      "y": 180
+    },
+    "facing=south,has_pole=false": {
+      "model": "roadstuff:block/streetlight_cobblestoneslab",
+      "y": 180
+    },
+
+    "facing=west,has_pole=true": {
+      "model": "roadstuff:block/streetlight_cobblestoneslab_pole",
+      "y": 270
+    },
+    "facing=west,has_pole=false": {
+      "model": "roadstuff:block/streetlight_cobblestoneslab",
+      "y": 270
+    }
+  }
+}

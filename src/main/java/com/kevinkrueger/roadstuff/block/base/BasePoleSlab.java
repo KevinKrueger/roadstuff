@@ -6,8 +6,6 @@ import com.kevinkrueger.roadstuff.util.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.ActionResultType;
@@ -20,14 +18,13 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 
 import java.util.stream.Stream;
 
 public class BasePoleSlab extends BlockBase
 {
 
-    public static final BooleanProperty HAS_SIGN = BooleanProperty.create("has_sign");
+    public static final BooleanProperty HAS_POLE = BooleanProperty.create("has_pole");
     CalculateShape calc = new CalculateShape();
     private static final VoxelShape SHAPE_N = Stream.of(
             Block.makeCuboidShape(0, 0, 0, 16, 8, 7),
@@ -39,7 +36,7 @@ public class BasePoleSlab extends BlockBase
     public BasePoleSlab(Properties properties)
     {
         super(properties);
-        setDefaultState(getDefaultState().with(HAS_SIGN, false));
+        setDefaultState(getDefaultState().with(HAS_POLE, false));
         calc.runCalculation(SHAPE_N);
     }
 
@@ -57,9 +54,9 @@ public class BasePoleSlab extends BlockBase
             if(player.getHeldItemMainhand().getItem() == ModBlocks.STEELPOLE_LIGHTS.get().asItem()) {
                 // Blockstate ändern
 
-                if(!worldIn.getBlockState(pos).get(HAS_SIGN))
+                if(!worldIn.getBlockState(pos).get(HAS_POLE))
                 {
-                    worldIn.setBlockState(pos, state.with(HAS_SIGN, true));
+                    worldIn.setBlockState(pos, state.with(HAS_POLE, true));
                     player.getHeldItemMainhand().shrink(1);
                 }
             }
@@ -69,7 +66,7 @@ public class BasePoleSlab extends BlockBase
     @Override
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder)
     {
-        builder.add(HAS_SIGN);
+        builder.add(HAS_POLE);
         super.fillStateContainer(builder);
     }
 }

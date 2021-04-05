@@ -1,0 +1,121 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "roadstuff:block/steelpole_lights",
+	"textures": {
+		"0": "roadstuff:block/cobblestone",
+		"1": "roadstuff:block/arriere",
+		"particle": "roadstuff:block/arriere"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 8, 7],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "texture": "#0"},
+				"east": {"uv": [9, 0, 16, 8], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 8], "texture": "#0"},
+				"west": {"uv": [0, 8, 7, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 7.01604], "texture": "#0"},
+				"down": {"uv": [0, 9.06952, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 0, 9],
+			"to": [16, 8, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "texture": "#0"},
+				"east": {"uv": [0, 0, 7, 8], "texture": "#0"},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#0"},
+				"west": {"uv": [9, 8, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 9.06952, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 7.01604], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 0, 7],
+			"to": [7, 8, 9],
+			"faces": {
+				"north": {"uv": [3.8593, 2.41206, 14.59296, 13.78894], "texture": "#0"},
+				"east": {"uv": [8, 0, 10, 8], "texture": "#0"},
+				"south": {"uv": [2.33166, 2.57286, 15.15578, 13.38693], "texture": "#0"},
+				"west": {"uv": [7, 8, 9, 16], "texture": "#0"},
+				"up": {"uv": [0, 7.01604, 7.01604, 9.06952], "texture": "#0"},
+				"down": {"uv": [0, 7.01604, 7.01604, 9.06952], "texture": "#0"}
+			}
+		},
+		{
+			"from": [9, 0, 7],
+			"to": [16, 8, 9],
+			"faces": {
+				"north": {"uv": [2.53266, 2.73367, 14.79397, 13.50754], "texture": "#0"},
+				"east": {"uv": [7, 0, 9, 8], "texture": "#0"},
+				"south": {"uv": [2.33166, 2.57286, 14.95477, 13.34673], "texture": "#0"},
+				"west": {"uv": [9, 0, 11, 8], "texture": "#0"},
+				"up": {"uv": [9.15508, 7.01604, 16, 9.06952], "texture": "#0"},
+				"down": {"uv": [9.06952, 6.93048, 16, 8.98396], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7, 0, 7],
+			"to": [9, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 2, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 2, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 2, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#1"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "VoxelShapes",
+			"origin": [0, 0, 0],
+			"children": [0, 1, 2, 3]
+		},
+		{
+			"name": "steelpole_lights",
+			"origin": [8, 8, 8],
+			"children": [
+				{
+					"name": "VoxelShapes",
+					"origin": [8, 8, 8],
+					"children": [4]
+				}
+			]
+		}
+	]
+}

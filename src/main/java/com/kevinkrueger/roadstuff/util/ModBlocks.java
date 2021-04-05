@@ -219,6 +219,10 @@ public class ModBlocks
             () -> new BasePoleSlab(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
 
+    public static final RegistryObject<Block> STREETLIGHT_COBBLESTONESLAB = register("streetlight_cobblestoneslab",
+            () -> new BasePoleSlab(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
+                    .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
+
     public static final RegistryObject<Block> RSCRAFTINGTABLE = register("rscraftingtable",
             () -> new RSCraftingTable(AbstractBlock.Properties.create(MATERIAL_DEFAULT)
                     .hardnessAndResistance(HARDNESS_DEFAULT,RESISTANCE_DEFAULT).sound(SOUND_DEFAULT)));
