@@ -1,54 +1,42 @@
 package com.kevinkrueger.roadstuff.tileentity;
 
+import com.kevinkrueger.roadstuff.container.BaseItemStackHandler;
+import com.kevinkrueger.roadstuff.container.RSCraftingContainer;
 import com.kevinkrueger.roadstuff.util.ModTileEntity;
-import net.minecraft.block.BlockState;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.tileentity.ITickableTileEntity;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityType;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.INamedContainerProvider;
+import net.minecraft.util.Direction;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.CapabilityItemHandler;
 
-public class RSCraftingTileEntity extends TileEntity implements ITickableTileEntity
-{
+public class RSCraftingTileEntity extends BaseInventoryTileEntity implements INamedContainerProvider {
+    private final BaseItemStackHandler inventory = new BaseItemStackHandler(25, this::markDirtyAndDispatch);
 
-
-
-    private int tick = 0;
-    private int energyLevel = 0;
-
-    public RSCraftingTileEntity(TileEntityType<?> tileEntityTypeIn)
-    {
-        super(tileEntityTypeIn);
-    }
-
-    public RSCraftingTileEntity()
-    {
-        this(ModTileEntity.RSCRAFTINGTABLE_ENTITY_TPYE.get());
+    public RSCraftingTileEntity() {
+        super(ModTileEntity.RSCRAFTINGTABLE_ENTITY_TPYE.get());
     }
 
     @Override
-    public void remove() {
-        super.remove();
+    public BaseItemStackHandler getInventory() {
+        return this.inventory;
     }
-
-    @OnlyIn(Dist.CLIENT)
-    public int getEnergyLevel()
-    {
-        return energyLevel;
-    }
-
-
 
     @Override
-    public void read(BlockState state, CompoundNBT tag)
-    {
-        super.read(state, tag);
+    public ITextComponent getDisplayName() {
+        return Localizable.of("container.roadstuff.rscrafting_table").build();
     }
 
+    @Override
+    public Container createMenu(int windowId, PlayerInventory playerInventory, PlayerEntity player) {
+        return RSCraftingContainer.create(windowId, playerInventory, this::isUsableByPlayer, this.inventory);
+    }
 
     @Override
-    public void tick() {
-
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
+        return !this.removed && cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? LazyOptional.empty() : super.getCapability(cap, side);
     }
 }

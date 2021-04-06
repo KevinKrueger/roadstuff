@@ -4,7 +4,9 @@ import com.kevinkrueger.roadstuff.RoadStuff;
 import com.kevinkrueger.roadstuff.container.RSCraftingContainer;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
@@ -30,10 +32,16 @@ public class RSCraftingTableScreen extends ContainerScreen<RSCraftingContainer> 
         this.renderHoveredTooltip(matrixStack, mouseX, mouseY);
     }
 
-    @Override
+    /*@Override
     protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int x, int y) {
         this.font.func_243248_b(matrixStack, this.playerInventory.getDisplayName(), (float) this.playerInventoryTitleX,
                 (float) this.playerInventoryTitleY, 4210752);
+    }*/
+
+    @Override
+    protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int x, int y) {
+        font.drawString(matrixStack, I18n.format("container.crafting"), 28, 6, 4210752);
+        font.drawString(matrixStack, I18n.format("container.inventory"), 8, ySize - 96 + 2, 4210752);
     }
 
     @Override

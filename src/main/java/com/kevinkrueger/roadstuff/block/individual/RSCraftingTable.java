@@ -41,26 +41,11 @@ public class RSCraftingTable extends BlockBase {
     @Override
     public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos,
                                              PlayerEntity player, Hand hand, BlockRayTraceResult trace) {
-        if (!world.isRemote())
-        {
-            TileEntity tileEntity = world.getTileEntity(pos);
-            if (tileEntity instanceof RSCraftingTileEntity)
-            {
-                INamedContainerProvider containerProvider = new INamedContainerProvider() {
-                    @Override
-                    public ITextComponent getDisplayName() {
-                        return new TranslationTextComponent("screen."+ RoadStuff.MOD_ID +".rscraftingtable");
-                    }
+        if (!world.isRemote()) {
+            TileEntity tile = world.getTileEntity(pos);
 
-                    @Override
-                    public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-                        return new RSCraftingContainer(i, world, pos, playerInventory, playerEntity);
-                    }
-                };
-                NetworkHooks.openGui((ServerPlayerEntity) player, containerProvider, tileEntity.getPos());
-            } else {
-                throw new IllegalStateException("Our named container provider is missing!");
-            }
+            if (tile instanceof RSCraftingTileEntity)
+                player.openContainer((RSCraftingTileEntity) tile);
         }
 
         return ActionResultType.SUCCESS;
