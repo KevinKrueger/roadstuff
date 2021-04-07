@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff.container;
+package com.kevinkrueger.roadstuff.crafting;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
 import net.minecraft.inventory.IInventory;

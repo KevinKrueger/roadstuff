@@ -3,22 +3,17 @@ package com.kevinkrueger.roadstuff.crafting;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import com.kevinkrueger.roadstuff.container.ITableRecipe;
-import com.kevinkrueger.roadstuff.container.RecipeTypes;
 import com.kevinkrueger.roadstuff.data.ModRecipeSerializers;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.crafting.ShapedRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.registries.ForgeRegistryEntry;
-
-import java.util.Map;
 
 import java.util.Map;
 

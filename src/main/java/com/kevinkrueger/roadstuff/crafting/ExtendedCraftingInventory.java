@@ -1,5 +1,6 @@
-package com.kevinkrueger.roadstuff.container;
+package com.kevinkrueger.roadstuff.crafting;
 
+import com.kevinkrueger.roadstuff.base.BaseItemStackHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;

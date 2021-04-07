@@ -1,6 +1,6 @@
 package com.kevinkrueger.roadstuff.crafting;
 
-import com.kevinkrueger.roadstuff.container.BaseItemStackHandler;
+import com.kevinkrueger.roadstuff.base.BaseItemStackHandler;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;

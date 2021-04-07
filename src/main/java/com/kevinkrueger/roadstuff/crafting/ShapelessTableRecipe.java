@@ -2,8 +2,6 @@ package com.kevinkrueger.roadstuff.crafting;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.kevinkrueger.roadstuff.container.ITableRecipe;
-import com.kevinkrueger.roadstuff.container.RecipeTypes;
 import com.kevinkrueger.roadstuff.data.ModRecipeSerializers;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;

@@ -1,5 +1,10 @@
 package com.kevinkrueger.roadstuff.container;
 
+import com.kevinkrueger.roadstuff.base.BaseItemStackHandler;
+import com.kevinkrueger.roadstuff.crafting.ExtendedCraftingInventory;
+import com.kevinkrueger.roadstuff.crafting.ITableRecipe;
+import com.kevinkrueger.roadstuff.crafting.RecipeTypes;
+import com.kevinkrueger.roadstuff.crafting.TableOutputSlot;
 import com.kevinkrueger.roadstuff.init.ModContainers;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

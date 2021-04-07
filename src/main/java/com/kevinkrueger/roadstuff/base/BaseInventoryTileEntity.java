@@ -1,6 +1,5 @@
 package com.kevinkrueger.roadstuff.base;
 
-import com.kevinkrueger.roadstuff.container.BaseItemStackHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
