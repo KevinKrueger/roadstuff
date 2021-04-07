@@ -3,9 +3,7 @@ package com.kevinkrueger.roadstuff;
 import com.kevinkrueger.roadstuff.base.BasicTab;
 import com.kevinkrueger.roadstuff.data.ModRecipeSerializers;
 import com.kevinkrueger.roadstuff.events.ModEvents;
-import com.kevinkrueger.roadstuff.network.ClientProxy;
-import com.kevinkrueger.roadstuff.network.IProxy;
-import com.kevinkrueger.roadstuff.network.ServerProxy;
+import com.kevinkrueger.roadstuff.network.*;
 import com.kevinkrueger.roadstuff.init.*;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -20,13 +18,17 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.ref.PhantomReference;
+import java.lang.ref.WeakReference;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("roadstuff")
 public class RoadStuff
 {
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger(); // Default Logger
+    public static RSLogger logger = new RSLogger(LOGGER, true); // Logger for Development
 
     // Road Stuff ....
     public static final String MOD_ID = "roadstuff";
@@ -38,6 +40,8 @@ public class RoadStuff
 
     public RoadStuff()
     {
+        LOGGER.debug("RSLogger: " + RSLogger.Version());
+
         // Proxy
         proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> ServerProxy::new);
 

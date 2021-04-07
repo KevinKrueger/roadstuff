@@ -1,6 +1,7 @@
 package com.kevinkrueger.roadstuff.init;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
+import com.kevinkrueger.roadstuff.network.ILogger;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
@@ -10,7 +11,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class Registration
+public class Registration implements ILogger
 {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, RoadStuff.MOD_ID);
     public static final DeferredRegister<Item>   ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,  RoadStuff.MOD_ID);
@@ -24,5 +25,6 @@ public class Registration
         ITEMS.register(eventBus);
         TILE_ENTITY_TYPE.register(eventBus);
         CONATINERS.register(eventBus);
+        LOGGER.log("Done: All Registered(EventBus)");
     }
 }

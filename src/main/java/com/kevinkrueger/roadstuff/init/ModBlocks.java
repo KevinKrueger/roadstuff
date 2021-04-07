@@ -3,6 +3,7 @@ package com.kevinkrueger.roadstuff.init;
 import com.kevinkrueger.roadstuff.RoadStuff;
 import com.kevinkrueger.roadstuff.block.base.*;
 import com.kevinkrueger.roadstuff.block.individual.*;
+import com.kevinkrueger.roadstuff.network.ILogger;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -15,7 +16,7 @@ import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class ModBlocks
+public class ModBlocks implements ILogger
 {
     // Defaults
     private static final Material MATERIAL_DEFAULT = Material.IRON;
@@ -236,6 +237,8 @@ public class ModBlocks
         RegistryObject<T> toReturn = Registration.BLOCKS.register(name, block);
         Registration.ITEMS.register(name, () -> new BlockItem(toReturn.get(),
                 new Item.Properties().group(RoadStuff.ROAD_STUFF_TAB)));
+
+        LOGGER.log("Register(Block): "+name);
         return toReturn;
     }
 }
