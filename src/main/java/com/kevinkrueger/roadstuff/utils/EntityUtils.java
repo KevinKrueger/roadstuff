@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff;
+package com.kevinkrueger.roadstuff.utils;
 
 import java.util.function.Consumer;
 import net.minecraft.entity.player.ServerPlayerEntity;

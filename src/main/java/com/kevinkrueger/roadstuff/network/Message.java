@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff;
+package com.kevinkrueger.roadstuff.network;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.api.distmarker.Dist;

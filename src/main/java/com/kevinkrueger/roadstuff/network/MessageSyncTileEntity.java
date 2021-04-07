@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff;
+package com.kevinkrueger.roadstuff.network;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;

@@ -1,5 +1,6 @@
-package com.kevinkrueger.roadstuff;
+package com.kevinkrueger.roadstuff.network;
 
+import com.kevinkrueger.roadstuff.network.Message;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
