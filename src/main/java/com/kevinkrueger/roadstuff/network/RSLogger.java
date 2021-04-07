@@ -21,6 +21,8 @@ public class RSLogger implements ILogger
     {
         setDeveloperMode(DeveloperMode);
         LOGGER = logger;
+
+        LOGGER.info("RS is Used");
     }
 
     /**

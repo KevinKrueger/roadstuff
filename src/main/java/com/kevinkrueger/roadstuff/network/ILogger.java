@@ -8,5 +8,5 @@ import com.kevinkrueger.roadstuff.RoadStuff;
 * */
 public interface ILogger
 {
-    static RSLogger LOGGER = new RSLogger(RoadStuff.LOGGER, RSLogger.isDeveloperMode());
+    static RSLogger LOGGER = RoadStuff.logger;
 }
