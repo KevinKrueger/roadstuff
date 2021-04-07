@@ -1,5 +1,9 @@
-package com.kevinkrueger.roadstuff;
+package com.kevinkrueger.roadstuff.tileentity;
 
+import com.kevinkrueger.roadstuff.EntityUtils;
+import com.kevinkrueger.roadstuff.MessageSyncTileEntity;
+import com.kevinkrueger.roadstuff.NetUtils;
+import com.kevinkrueger.roadstuff.RoadStuff;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;

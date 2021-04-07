@@ -1,6 +1,6 @@
 package com.kevinkrueger.roadstuff.events;
 
-import com.kevinkrueger.roadstuff.util.ModItems;
+import com.kevinkrueger.roadstuff.init.ModItems;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.TickEvent;

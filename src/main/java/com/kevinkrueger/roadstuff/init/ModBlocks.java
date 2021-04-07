@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff.util;
+package com.kevinkrueger.roadstuff.init;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
 import com.kevinkrueger.roadstuff.block.base.*;

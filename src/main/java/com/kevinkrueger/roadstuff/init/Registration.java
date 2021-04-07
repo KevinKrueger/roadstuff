@@ -1,8 +1,7 @@
-package com.kevinkrueger.roadstuff.util;
+package com.kevinkrueger.roadstuff.init;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
 import net.minecraft.block.Block;
-import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;

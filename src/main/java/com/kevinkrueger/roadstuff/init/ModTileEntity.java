@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff.util;
+package com.kevinkrueger.roadstuff.init;
 
 import com.kevinkrueger.roadstuff.tileentity.RSCraftingTileEntity;
 import net.minecraft.tileentity.TileEntityType;

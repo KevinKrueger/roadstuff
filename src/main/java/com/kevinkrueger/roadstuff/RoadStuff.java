@@ -1,11 +1,12 @@
 package com.kevinkrueger.roadstuff;
 
 import com.kevinkrueger.roadstuff.base.BasicTab;
+import com.kevinkrueger.roadstuff.data.ModRecipeSerializers;
 import com.kevinkrueger.roadstuff.events.ModEvents;
-import com.kevinkrueger.roadstuff.proxy.ClientProxy;
-import com.kevinkrueger.roadstuff.proxy.IProxy;
-import com.kevinkrueger.roadstuff.proxy.ServerProxy;
-import com.kevinkrueger.roadstuff.util.*;
+import com.kevinkrueger.roadstuff.network.ClientProxy;
+import com.kevinkrueger.roadstuff.network.IProxy;
+import com.kevinkrueger.roadstuff.network.ServerProxy;
+import com.kevinkrueger.roadstuff.init.*;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -50,6 +51,7 @@ public class RoadStuff
         ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALK_SIGN.get()));
 
         MinecraftForge.EVENT_BUS.register((new ModEvents()));
+        MinecraftForge.EVENT_BUS.register((new ModRecipeSerializers()));
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

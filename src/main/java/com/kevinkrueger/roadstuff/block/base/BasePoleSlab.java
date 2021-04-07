@@ -2,7 +2,7 @@ package com.kevinkrueger.roadstuff.block.base;
 
 import com.kevinkrueger.roadstuff.base.BlockBase;
 import com.kevinkrueger.roadstuff.base.CalculateShape;
-import com.kevinkrueger.roadstuff.util.ModBlocks;
+import com.kevinkrueger.roadstuff.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;

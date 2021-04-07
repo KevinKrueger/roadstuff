@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff.util;
+package com.kevinkrueger.roadstuff.init;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;

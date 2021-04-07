@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff.proxy;
+package com.kevinkrueger.roadstuff.network;
 
 import net.minecraft.world.World;
 

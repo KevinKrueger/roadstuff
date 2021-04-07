@@ -1,8 +1,8 @@
-package com.kevinkrueger.roadstuff.proxy;
+package com.kevinkrueger.roadstuff.network;
 
 import com.kevinkrueger.roadstuff.RoadStuff;
 import com.kevinkrueger.roadstuff.screens.RSCraftingTableScreen;
-import com.kevinkrueger.roadstuff.util.ModContainers;
+import com.kevinkrueger.roadstuff.init.ModContainers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.world.World;

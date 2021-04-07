@@ -1,6 +1,6 @@
 package com.kevinkrueger.roadstuff.container;
 
-import com.kevinkrueger.roadstuff.util.ModContainers;
+import com.kevinkrueger.roadstuff.init.ModContainers;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;

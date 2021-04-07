@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff.tileentity;
+package com.kevinkrueger.roadstuff.base;
 
 
 import net.minecraft.util.text.IFormattableTextComponent;

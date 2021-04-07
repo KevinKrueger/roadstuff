@@ -1,4 +1,4 @@
-package com.kevinkrueger.roadstuff.tileentity;
+package com.kevinkrueger.roadstuff.base;
 
 import com.kevinkrueger.roadstuff.container.BaseItemStackHandler;
 import net.minecraft.block.BlockState;

@@ -2,12 +2,9 @@ package com.kevinkrueger.roadstuff.block.individual;
 
 import com.kevinkrueger.roadstuff.base.BlockBase;
 import com.kevinkrueger.roadstuff.base.CalculateShape;
-import com.kevinkrueger.roadstuff.util.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Items;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.IBooleanFunction;

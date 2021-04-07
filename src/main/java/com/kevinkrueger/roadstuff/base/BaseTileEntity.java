@@ -1,5 +1,6 @@
-package com.kevinkrueger.roadstuff.tileentity;
+package com.kevinkrueger.roadstuff.base;
 
+import com.kevinkrueger.roadstuff.tileentity.TileEntityHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;

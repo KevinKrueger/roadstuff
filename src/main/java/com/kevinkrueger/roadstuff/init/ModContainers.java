@@ -1,10 +1,7 @@
-package com.kevinkrueger.roadstuff.util;
+package com.kevinkrueger.roadstuff.init;
 
 import com.kevinkrueger.roadstuff.container.RSCraftingContainer;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
 
 public class ModContainers

@@ -1,8 +1,10 @@
 package com.kevinkrueger.roadstuff.tileentity;
 
+import com.kevinkrueger.roadstuff.base.BaseInventoryTileEntity;
+import com.kevinkrueger.roadstuff.base.Localizable;
 import com.kevinkrueger.roadstuff.container.BaseItemStackHandler;
 import com.kevinkrueger.roadstuff.container.RSCraftingContainer;
-import com.kevinkrueger.roadstuff.util.ModTileEntity;
+import com.kevinkrueger.roadstuff.init.ModTileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
