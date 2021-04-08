@@ -13,20 +13,19 @@ import java.util.function.Supplier;
 public class ModItems implements ILogger {
 
     public static final RegistryObject<Item> STEEL_INGOT = register("steel_ingot",
-            () -> new SteelIngot(CreateProps().maxStackSize(10).isImmuneToFire()));
+            () -> new SteelIngot(DefaultProps().maxStackSize(10).isImmuneToFire()));
 
     public static final RegistryObject<Item> BARRIER_TAPE = register("barriertape",
-            () -> new BarrierTape(CreateProps().defaultMaxDamage(100)));
+            () -> new BarrierTape(DefaultProps().defaultMaxDamage(100)));
 
     public static final RegistryObject<Item> CARDBOARDTUBE = register("cardboardtube",
-            () -> new Item(CreateProps().maxStackSize(5)));
+            () -> new Item(DefaultProps().maxStackSize(5)));
 
     public static final RegistryObject<Item> STEEL_PLATE = register("steel_plate",
-            () -> new Item(CreateProps().maxStackSize(10)));
-
+            () -> new Item(DefaultProps().maxStackSize(10).isImmuneToFire()));
 
     public static final RegistryObject<Item> LIGHTBULB = register("lightbulb",
-            () -> new Item(CreateProps()));
+            () -> new Item(DefaultProps()));
 
 
     // For init
@@ -34,14 +33,25 @@ public class ModItems implements ILogger {
 
     private static RegistryObject<Item> register(String name, Supplier<Item> sup)
     {
-        LOGGER.log("Register(Item): " + name);
-        return Registration.ITEMS.register(name, sup);
+        RegistryObject<Item> registryObject = null;
+
+        try
+        {
+            registryObject =  Registration.ITEMS.register(name, sup);
+            LOGGER.log(ModItems.class, "Register(Item): " + name);
+        }
+        catch (Exception exception)
+        {
+            LOGGER.error(ModItems.class, "Register(Item): " + name, exception);
+        }
+
+        return registryObject;
     }
 
     /*
     *   Helper Method for Default-Properties
     */
-    private static Properties CreateProps()
+    private static Properties DefaultProps()
     {
         return new Properties().group(RoadStuff.ROAD_STUFF_TAB);
     }

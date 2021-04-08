@@ -14,8 +14,8 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class RSCraftingTable extends BlockBase {
-    public RSCraftingTable(Properties properties) {
-        super(properties);
+    public RSCraftingTable(String RegistryName, Properties properties) {
+        super(RegistryName, properties);
     }
 
     @Override

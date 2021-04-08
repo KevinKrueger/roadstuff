@@ -24,7 +24,7 @@ public class Config
     }
 
 
-    public static void loadCOnfigFile(ForgeConfigSpec config, String path)
+    public static void loadConfigFile(ForgeConfigSpec config, String path)
     {
         final CommentedFileConfig file = CommentedFileConfig.builder(new File(path))
                 .sync().autosave().writingMode(WritingMode.REPLACE).build();

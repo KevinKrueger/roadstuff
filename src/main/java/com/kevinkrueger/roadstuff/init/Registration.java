@@ -21,10 +21,16 @@ public class Registration implements ILogger
     public static void init()
     {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        BLOCKS.register(eventBus);
-        ITEMS.register(eventBus);
-        TILE_ENTITY_TYPE.register(eventBus);
-        CONATINERS.register(eventBus);
-        LOGGER.log("Done: All Registered(EventBus)");
+        try
+        {
+            BLOCKS.register(eventBus);
+            ITEMS.register(eventBus);
+            TILE_ENTITY_TYPE.register(eventBus);
+            CONATINERS.register(eventBus);
+            LOGGER.done(Registration.class, "All Registered(EventBus)");
+        }catch (Exception exception)
+        {
+            LOGGER.error(Registration.class, "Register EventBus: ", exception);
+        }
     }
 }

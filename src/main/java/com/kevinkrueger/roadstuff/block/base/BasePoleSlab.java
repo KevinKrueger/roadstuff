@@ -33,11 +33,11 @@ public class BasePoleSlab extends BlockBase
             Block.makeCuboidShape(9, 0, 7, 16, 8, 9)
     ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR)).get();
 
-    public BasePoleSlab(Properties properties)
+    public BasePoleSlab(String RegistryName, Properties properties)
     {
-        super(properties);
+        super(RegistryName, properties);
         setDefaultState(getDefaultState().with(HAS_POLE, false));
-        calc.runCalculation(SHAPE_N);
+        calc.runCalculation(this.getClass(), RegistryName, SHAPE_N);
     }
 
     @Override

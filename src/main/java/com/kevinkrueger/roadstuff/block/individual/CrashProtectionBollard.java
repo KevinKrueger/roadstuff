@@ -14,9 +14,9 @@ import java.util.stream.Stream;
 
 public class CrashProtectionBollard extends BlockBase
 {
-    public CrashProtectionBollard(Properties properties)
+    public CrashProtectionBollard(String RegistryName, Properties properties)
     {
-        super(properties);
+        super(RegistryName, properties);
     }
 
     @Override

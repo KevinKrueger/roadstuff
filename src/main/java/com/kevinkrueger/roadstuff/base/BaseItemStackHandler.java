@@ -11,6 +11,8 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.items.ItemStackHandler;
 import org.apache.commons.lang3.ArrayUtils;
 
+import javax.annotation.Nonnull;
+
 public class BaseItemStackHandler extends ItemStackHandler {
     private final Runnable onContentsChanged;
 
@@ -23,7 +25,7 @@ public class BaseItemStackHandler extends ItemStackHandler {
     private int[] outputSlots = null;
 
     public BaseItemStackHandler(int size) {
-        this(size, (Runnable)null);
+        this(size, null);
     }
 
     public BaseItemStackHandler(int size, Runnable onContentsChanged) {
@@ -32,12 +34,14 @@ public class BaseItemStackHandler extends ItemStackHandler {
         this.slotSizeMap = new HashMap<>();
     }
 
-    public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+    @Nonnull
+    public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
         if (this.outputSlots != null && ArrayUtils.contains(this.outputSlots, slot))
             return stack;
         return super.insertItem(slot, stack, simulate);
     }
 
+    @Nonnull
     public ItemStack extractItem(int slot, int amount, boolean simulate) {
         if (this.outputSlots != null && !ArrayUtils.contains(this.outputSlots, slot))
             return ItemStack.EMPTY;
@@ -45,11 +49,11 @@ public class BaseItemStackHandler extends ItemStackHandler {
     }
 
     public int getSlotLimit(int slot) {
-        return this.slotSizeMap.containsKey(Integer.valueOf(slot)) ? ((Integer)this.slotSizeMap.get(Integer.valueOf(slot))).intValue() : this.maxStackSize;
+        return this.slotSizeMap.containsKey(slot) ? this.slotSizeMap.get(slot) : this.maxStackSize;
     }
 
-    public boolean isItemValid(int slot, ItemStack stack) {
-        return (this.slotValidator == null || ((Boolean)this.slotValidator.apply(Integer.valueOf(slot), stack)).booleanValue());
+    public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
+        return (this.slotValidator == null || this.slotValidator.apply(slot, stack));
     }
 
     protected void onContentsChanged(int slot) {
@@ -78,7 +82,7 @@ public class BaseItemStackHandler extends ItemStackHandler {
     }
 
     public void addSlotLimit(int slot, int size) {
-        this.slotSizeMap.put(Integer.valueOf(slot), Integer.valueOf(size));
+        this.slotSizeMap.put(slot, size);
     }
 
     public void setSlotValidator(BiFunction<Integer, ItemStack, Boolean> validator) {
@@ -90,7 +94,7 @@ public class BaseItemStackHandler extends ItemStackHandler {
     }
 
     public IInventory toIInventory() {
-        return (IInventory)new Inventory((ItemStack[])this.stacks.toArray((Object[])new ItemStack[0]));
+        return new Inventory(this.stacks.toArray(new ItemStack[0]));
     }
 
     public BaseItemStackHandler copy() {

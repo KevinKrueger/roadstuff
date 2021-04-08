@@ -3,8 +3,11 @@ package com.kevinkrueger.roadstuff;
 import com.kevinkrueger.roadstuff.base.BasicTab;
 import com.kevinkrueger.roadstuff.data.ModRecipeSerializers;
 import com.kevinkrueger.roadstuff.events.ModEvents;
-import com.kevinkrueger.roadstuff.network.*;
 import com.kevinkrueger.roadstuff.init.*;
+import com.kevinkrueger.roadstuff.network.ClientProxy;
+import com.kevinkrueger.roadstuff.network.IProxy;
+import com.kevinkrueger.roadstuff.network.RSLogger;
+import com.kevinkrueger.roadstuff.network.ServerProxy;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,14 +15,12 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.lang.ref.PhantomReference;
-import java.lang.ref.WeakReference;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -57,11 +58,13 @@ public class RoadStuff
         MinecraftForge.EVENT_BUS.register((new ModEvents()));
         MinecraftForge.EVENT_BUS.register((new ModRecipeSerializers()));
 
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-
+        // Fired if Modloading complete
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::LoadComplete);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -74,13 +77,24 @@ public class RoadStuff
     private void doClientStuff(final FMLClientSetupEvent event)
     {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+    }
+
+    private void LoadComplete(final FMLLoadCompleteEvent event)
+    {
+        logger.log(this.getClass(), "RoadStuff is ready!");
+        LOGGER.debug(logger.LoggerAnalysis(this.getClass()));
+        if(RSLogger.isDeveloperMode()) {
+            try {
+                logger.SaveLoggerProtocol(System.getProperty("user.dir") + "\\Protocol.ptc");
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event) {
+    public void onServerStarting(FMLServerStartingEvent event) throws Exception {
         // do something when the server starts
-        LOGGER.info("RoadStuff is ready!");
     }
 }

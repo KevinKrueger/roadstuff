@@ -10,9 +10,9 @@ import net.minecraft.world.IBlockReader;
 
 public class SteelPoleLights extends BlockBase
 {
-    public SteelPoleLights(Properties properties)
+    public SteelPoleLights(String RegistryName, Properties properties)
     {
-        super(properties);
+        super(RegistryName, properties);
     }
 
     @Override

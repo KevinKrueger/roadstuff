@@ -24,10 +24,10 @@ public class BaseRectangleSign extends BlockBase
             Block.makeCuboidShape(7, 0, 9, 9, 12, 10)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
-    public BaseRectangleSign(Properties properties)
+    public BaseRectangleSign(String RegistryName, Properties properties)
     {
-        super(properties);
-        calc.runCalculation(SHAPE_N);
+        super(RegistryName, properties);
+        calc.runCalculation(this.getClass(), RegistryName, SHAPE_N);
     }
 
     @Override

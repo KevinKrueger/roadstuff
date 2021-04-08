@@ -17,10 +17,10 @@ public class SteelPoleSigns extends BlockBase
     CalculateShape calc =new CalculateShape();
     private static final VoxelShape SHAPE_N = Block.makeCuboidShape(7, 0, 8, 9, 16, 10);
 
-    public SteelPoleSigns(Properties properties)
+    public SteelPoleSigns(String RegistryName, Properties properties)
     {
-        super(properties);
-        calc.runCalculation(SHAPE_N);
+        super(RegistryName, properties);
+        calc.runCalculation(this.getClass(), RegistryName, SHAPE_N);
     }
 
     @Override

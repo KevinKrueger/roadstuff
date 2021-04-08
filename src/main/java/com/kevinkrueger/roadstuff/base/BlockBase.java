@@ -29,6 +29,7 @@ import java.util.List;
 
 public class BlockBase extends Block
 {
+    public String RegistryName;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 
@@ -37,9 +38,10 @@ public class BlockBase extends Block
     private TextFormatting _toolTipColor = TextFormatting.WHITE;
     private final String _toolTipERROR = TextFormatting.RED +  "PLEASE SET THIS TEXT!";
 
-    public BlockBase(Properties properties)
+    public BlockBase(String RegistryName, Properties properties)
     {
         super(properties);
+        this.RegistryName = RegistryName;
     }
 
     @Nullable
@@ -137,5 +139,11 @@ public class BlockBase extends Block
             this._toolTipText = _toolTipERROR;
 
         return this;
+    }
+
+
+    public void SetRegistryName(String registryName)
+    {
+        RegistryName = registryName;
     }
 }

@@ -1,5 +1,6 @@
 package com.kevinkrueger.roadstuff.base;
 
+import com.kevinkrueger.roadstuff.network.ILogger;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
@@ -8,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class CalculateShape
+public class CalculateShape implements ILogger
 {
     public Map<Direction, VoxelShape> SHAPES;
 
@@ -31,15 +32,22 @@ public class CalculateShape
                 buffer[1] = VoxelShapes.empty();
             }
             SHAPES.put(to, buffer[0]);
-        }catch (Exception ex)
+        }catch (Exception exceptionx)
         {
-            ex.printStackTrace();
+            exceptionx.printStackTrace();
         }
     }
 
-    public void runCalculation(VoxelShape shape) {
+    public void runCalculation(Class<?> thisClass, String RegistryName, VoxelShape shape) {
         for (Direction direction : Direction.values()) {
-            calculateShapes(direction, shape);
+            try{
+                calculateShapes(direction, shape);
+
+            }catch (Exception exception)
+            {
+                LOGGER.error(thisClass, "Calculate Shape in Direction:" + direction, exception);
+            }
         }
+        LOGGER.log(thisClass, "Calculated Shape for " + RegistryName);
     }
 }

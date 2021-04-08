@@ -57,10 +57,10 @@ public class BaseOctagonSign extends BlockBase {
 
 
 
-    public BaseOctagonSign(Properties properties)
+    public BaseOctagonSign(String RegistryName, Properties properties)
     {
-        super(properties);
-        calc.runCalculation(SHAPE_N);
+        super(RegistryName, properties);
+        calc.runCalculation(this.getClass(), RegistryName, SHAPE_N);
     }
 
     @Override

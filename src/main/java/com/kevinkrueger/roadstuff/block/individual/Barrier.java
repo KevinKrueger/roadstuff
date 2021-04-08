@@ -26,11 +26,11 @@ public class Barrier extends BlockBase {
             Block.makeCuboidShape(14, 0, 0, 16, 16, 2)
     ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 
-    public Barrier(Properties properies)
+    public Barrier(String RegistryName, Properties properies)
     {
-        super(properies);
+        super(RegistryName, properies);
         properies.doesNotBlockMovement();
-        calc.runCalculation(SHAPE_N);
+        calc.runCalculation(this.getClass(), RegistryName, SHAPE_N);
     }
 
     @Override

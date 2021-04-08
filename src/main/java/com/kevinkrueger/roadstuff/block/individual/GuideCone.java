@@ -14,8 +14,8 @@ import java.util.stream.Stream;
 
 public class GuideCone extends BlockBase
 {
-    public GuideCone(Properties properties) {
-        super(properties);
+    public GuideCone(String RegistryName, Properties properties) {
+        super(RegistryName, properties);
     }
 
     @Override
