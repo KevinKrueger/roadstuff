@@ -58,7 +58,6 @@ public class RoadStuff
         MinecraftForge.EVENT_BUS.register((new ModEvents()));
         MinecraftForge.EVENT_BUS.register((new ModRecipeSerializers()));
 
-
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the doClientStuff method for modloading
@@ -67,6 +66,7 @@ public class RoadStuff
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::LoadComplete);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
     }
 
     private void setup(final FMLCommonSetupEvent event)

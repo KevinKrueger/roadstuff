@@ -23,7 +23,7 @@ public class RSLogger implements ILogger
     private static boolean DeveloperMode = true;
     private static Logger LOGGER;
     private static LoggerProtocol protocol;
-    private static long startTime;
+    private static long startTime; // Start Execution Time
     private static int errorCount = 0, warningCount = 0, infoCount = 0; // Analysis
     private final static String version = "1.4.2";
 
@@ -40,6 +40,11 @@ public class RSLogger implements ILogger
         ANALYSES
     };
 
+    /**
+     *  Initialize the RSLogger Class
+     *  @param logger The Main-Instance from the log4j Logger
+     *  @param DeveloperMode Describes whether the development mode releases additional features when switched on
+     */
     public RSLogger(Logger logger, boolean DeveloperMode)
     {
         startTime = System.currentTimeMillis();
@@ -50,9 +55,9 @@ public class RSLogger implements ILogger
     }
 
     /**
-     * Extended Method for Development
+     * Show a info message in the Console
      * @param msg Show this Message in Console
-     * */
+     */
     public void log(Class<?> thisClass, String msg)
     {
         infoCount++;
@@ -64,8 +69,10 @@ public class RSLogger implements ILogger
     /**
      *  May only be used for try & catch or other queries where errors can be spit!
      *  => Development mode is not considered!
-    *   @param msg Show
-    **/
+     *  @param thisClass Describes the class where the action is performed
+     *  @param msg this Message in Console
+     *  @param exception Spits out information in connection with the logger about the error
+     */
     public void error(Class<?> thisClass, String msg, Exception exception)
     {
         errorCount++;
@@ -78,6 +85,11 @@ public class RSLogger implements ILogger
         LOGGER.error(ExceptionMessage , exception);
     }
 
+    /**
+     *  Show a warning message in the Console
+     *  @param thisClass Describes the class where the action is performed
+     *  @param msg this Message in Console
+     */
     public void warning(Class<?> thisClass, String msg)
     {
         warningCount++;
@@ -86,7 +98,11 @@ public class RSLogger implements ILogger
             LOGGER.warn(msg);
     }
 
-
+    /**
+     *  Displays a completed operation as a message
+     *  @param thisClass Describes the class where the action is performed
+     *  @param msg this Message in Console
+     */
     public void done(Class<?> thisClass, String msg)
     {
         infoCount++;
@@ -111,11 +127,14 @@ public class RSLogger implements ILogger
 
     private static Timestamp getTimestamp()
     {
-        Date date= new Date();
-        long time = date.getTime();
-        return new Timestamp(time);
+        return new Timestamp(new Date().getTime());
     }
 
+    /**
+     *
+     * @param thisClass Describes the class where the action is performed
+     * @return
+     */
     public String LoggerAnalysis(Class<?> thisClass)
     {
         if(isDeveloperMode())
@@ -135,6 +154,11 @@ public class RSLogger implements ILogger
             return "Activate 'DeveloperMode' to get Logger Analysis!";
     }
 
+    /**
+     * Saves the protocol in the desired location
+     * @param file Describes the path where the file should be saved
+     * @throws Exception If the file saving fails
+     */
     public void SaveLoggerProtocol(String file) throws Exception {
         if(isDeveloperMode())
         {
@@ -146,13 +170,12 @@ public class RSLogger implements ILogger
 
 class LoggerProtocol
 {
-    List<ProtocolLine> protocolLineList;
+    private static List<ProtocolLine> protocolLineList;
 
     public LoggerProtocol()
     {
         protocolLineList = new ArrayList<>();
     }
-
 
     /**
      * Adds a line to the protocol
@@ -175,12 +198,11 @@ class LoggerProtocol
 
     /**
      * Saves the protocol in the desired location
-     * @param file Beschreibt den Pfad, wo die Datei gespeichert werden soll
+     * @param file Describes the path where the file should be saved
      */
     public void SaveProtocol(String file) throws IOException {
 
-        FileWriter fileWriter = new FileWriter(file);
-        PrintWriter printWriter = new PrintWriter(fileWriter);
+        PrintWriter printWriter = new PrintWriter(new FileWriter(file));
 
         // Start Line
         printWriter.print("======= RSLogger Protocol ======="+"\n");
@@ -194,7 +216,6 @@ class LoggerProtocol
         {
             printWriter.print(protocolLine.buildLine()+"\n");
         }
-
 
         printWriter.close();
     }
@@ -210,6 +231,13 @@ class ProtocolLine
     private final Class<?> thisClass;
     private final String Msg;
 
+    /**
+     * Initialize the ProtocolLine
+     * @param loggerType Describes which type of log it is
+     * @param timestamp Describes the current timestamp at lease time
+     * @param thisClass Describes the class where the action is performed
+     * @param msg Describes the information that can be seen in the protocol
+     */
     public ProtocolLine(RSLogger.LoggerType loggerType, Timestamp timestamp, Class<?> thisClass, String msg)
     {
             this.LoggerType = loggerType;
