@@ -85,7 +85,7 @@ public class RoadStuff
         LOGGER.debug(logger.LoggerAnalysis(this.getClass()));
         if(RSLogger.isDeveloperMode()) {
             try {
-                logger.SaveLoggerProtocol(System.getProperty("user.dir") + "\\Protocol.ptc");
+                logger.SaveLoggerProtocol(System.getProperty("user.dir") + "\\Protocol.ptc", this.getClass());
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
