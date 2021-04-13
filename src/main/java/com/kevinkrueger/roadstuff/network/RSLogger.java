@@ -212,9 +212,14 @@ class LoggerProtocol
         );
     }
 
-    public void AddDeviceProtocolLine(Class<?> thisClass, Memory memory)
+    /**
+     * Adds the actual CPU & Memory usage to the List
+     * @param thisClass Describes the class where the action is performed
+     * @param deviceInfo
+     */
+    public void AddDeviceProtocolLine(Class<?> thisClass, DeviceInfo deviceInfo)
     {
-        deviceLoggerProtocolLineList.add(new DeviceLoggerProtocolLine(thisClass, memory));
+        deviceLoggerProtocolLineList.add(new DeviceLoggerProtocolLine(thisClass, deviceInfo));
     }
 
     public LoggerProtocolLine ConvertToLoggerProtocolLine(IConvertLoggerProtocolLine cLPL)
@@ -250,14 +255,14 @@ class LoggerProtocol
     private static void CalculateAveragedMemoryACPU(LoggerProtocol protocol, Class<?> thisClass, List<DeviceLoggerProtocolLine> deviceLoggerProtocolLineList)
     {
         int listSize = deviceLoggerProtocolLineList.size();
-        Memory average_memory_device = new Memory();
+        DeviceInfo average_memory_device = new DeviceInfo();
 
         for(DeviceLoggerProtocolLine deviceLine : deviceLoggerProtocolLineList)
         {
-            average_memory_device.cpuLoad += deviceLine.memory.cpuLoad;
-            average_memory_device.allocatedMemory += deviceLine.memory.allocatedMemory;
-            average_memory_device.freeMemory += deviceLine.memory.freeMemory;
-            average_memory_device.totalFreeMemory += deviceLine.memory.totalFreeMemory;
+            average_memory_device.cpuLoad += deviceLine.deviceInfo.cpuLoad;
+            average_memory_device.allocatedMemory += deviceLine.deviceInfo.allocatedMemory;
+            average_memory_device.freeMemory += deviceLine.deviceInfo.freeMemory;
+            average_memory_device.totalFreeMemory += deviceLine.deviceInfo.totalFreeMemory;
         }
 
         // Calculate Average
@@ -324,43 +329,52 @@ class DeviceLoggerProtocolLine implements IConvertLoggerProtocolLine
     public final RSLogger.LoggerType LoggerType = RSLogger.LoggerType.ANALYSES;
     public final Timestamp timestamp;
     public final Class<?> thisClass;
-    public final Memory memory;
+    public final DeviceInfo deviceInfo;
 
     /**
      * Initialize the ProtocolLine
      * @param thisClass Describes the class where the action is performed
      */
-    public DeviceLoggerProtocolLine(Class<?> thisClass, Memory memory)
+    public DeviceLoggerProtocolLine(Class<?> thisClass, DeviceInfo deviceInfo)
     {
-        this.memory = memory;
+        this.deviceInfo = deviceInfo;
         this.timestamp = RSLogger.getTimestamp();
         this.thisClass = thisClass;
     }
 
     @Override
-    public RSLogger.LoggerType getLoggerType() {
+    public RSLogger.LoggerType getLoggerType()
+    {
         return LoggerType;
     }
+
     @Override
-    public Timestamp getTimeStamp() {
+    public Timestamp getTimeStamp()
+    {
         return timestamp;
     }
+
     @Override
-    public Class<?> thisClass() {
+    public Class<?> thisClass()
+    {
         return thisClass;
     }
+
     @Override
-    public String getMsg() {
-        return getAverageCpuAMemoryUsage(memory);
+    public String getMsg()
+    {
+        return getAverageCpuAMemoryUsage(deviceInfo);
     }
 
-    public String getAverageCpuAMemoryUsage(Memory memory)
+    public String getAverageCpuAMemoryUsage(DeviceInfo deviceInfo)
     {
-        String unit = "MB";
-        return  "Ø Alloc. Mem.: " + memory.allocatedMemory + unit +
-                ", Ø Free Mem.: " + memory.freeMemory + unit +
-                ", Ø Total Free Mem.: " + memory.totalFreeMemory + unit +
-                ", Ø CPU Load: " + roundDouble(memory.cpuLoad,1) +"%";
+        final String unit = "MB";
+        final int precision = 1;
+
+        return  "Ø Alloc. Mem.: " + roundDouble(deviceInfo.allocatedMemory, precision) + unit +
+                ", Ø Free Mem.: " + roundDouble(deviceInfo.freeMemory,precision ) + unit +
+                ", Ø Total Free Mem.: " + roundDouble(deviceInfo.totalFreeMemory, precision) + unit +
+                ", Ø CPU Load: " + roundDouble(deviceInfo.cpuLoad,precision) +"%";
     }
 
     private static double roundDouble(double d, int places)
@@ -370,19 +384,19 @@ class DeviceLoggerProtocolLine implements IConvertLoggerProtocolLine
         return bigDecimal.doubleValue();
     }
 }
-class Memory
+class DeviceInfo
 {
     public double cpuLoad;
-    public long maxMemory;
-    public long allocatedMemory;
-    public long freeMemory;
-    public long totalFreeMemory;
+    public double maxMemory;
+    public double allocatedMemory;
+    public double freeMemory;
+    public double totalFreeMemory;
 }
+
 class Device
 {
-
-
-    public static double getProcessCpuLoad() throws ReflectionException, InstanceNotFoundException, MalformedObjectNameException {
+    public static double getProcessCpuLoad() throws ReflectionException, InstanceNotFoundException, MalformedObjectNameException
+    {
         MBeanServer mbs    = ManagementFactory.getPlatformMBeanServer();
         ObjectName name    = ObjectName.getInstance("java.lang:type=OperatingSystem");
         AttributeList list = mbs.getAttributes(name, new String[]{ "ProcessCpuLoad" });
@@ -398,16 +412,20 @@ class Device
         return ((int)(value * 1000) / 10.0);
     }
 
-    public static Memory getDeviceMemory(){
+    public static DeviceInfo getDeviceMemory()
+    {
+        final double toMB = Math.pow(10, -6);
         final Runtime runtime = Runtime.getRuntime();
-        Memory deviceMemory= new Memory();
-        deviceMemory.maxMemory = runtime.maxMemory() / 1000000; // MB
-        deviceMemory.allocatedMemory = runtime.totalMemory() / 1000000;// MB
-        deviceMemory.freeMemory = runtime.freeMemory() / 1000000;// MB
+
+        DeviceInfo deviceMemory= new DeviceInfo();
+        deviceMemory.maxMemory = runtime.maxMemory() * toMB; // MB
+        deviceMemory.allocatedMemory = runtime.totalMemory() * toMB;// MB
+        deviceMemory.freeMemory = runtime.freeMemory() * toMB;// MB
         deviceMemory.totalFreeMemory = (deviceMemory.freeMemory + (deviceMemory.maxMemory - deviceMemory.allocatedMemory));
         try {
             deviceMemory.cpuLoad = getProcessCpuLoad();
         }catch (Exception ignored){}
+
         return deviceMemory;
     }
 }

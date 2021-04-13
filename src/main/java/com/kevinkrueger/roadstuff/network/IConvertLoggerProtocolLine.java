@@ -3,7 +3,7 @@ package com.kevinkrueger.roadstuff.network;
 import java.sql.Timestamp;
 
 /**
- *
+ *  This is for new Protocol Line Types (For Converting Later into ProtocolLine)
  */
 public interface IConvertLoggerProtocolLine
 {
