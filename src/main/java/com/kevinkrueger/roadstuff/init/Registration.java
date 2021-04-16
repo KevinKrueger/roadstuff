@@ -16,7 +16,7 @@ public class Registration implements ILogger
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, RoadStuff.MOD_ID);
     public static final DeferredRegister<Item>   ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,  RoadStuff.MOD_ID);
     public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPE = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, RoadStuff.MOD_ID);
-    public static final DeferredRegister<ContainerType<?>> CONATINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, RoadStuff.MOD_ID);
+    public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, RoadStuff.MOD_ID);
 
     public static void init()
     {
@@ -26,7 +26,7 @@ public class Registration implements ILogger
             BLOCKS.register(eventBus);
             ITEMS.register(eventBus);
             TILE_ENTITY_TYPE.register(eventBus);
-            CONATINERS.register(eventBus);
+            CONTAINERS.register(eventBus);
             LOGGER.done(Registration.class, "All Registered(EventBus)");
         }catch (Exception exception)
         {

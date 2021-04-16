@@ -6,8 +6,8 @@ import com.kevinkrueger.roadstuff.events.ModEvents;
 import com.kevinkrueger.roadstuff.init.*;
 import com.kevinkrueger.roadstuff.network.ClientProxy;
 import com.kevinkrueger.roadstuff.network.IProxy;
-import com.kevinkrueger.roadstuff.network.RSLogger;
 import com.kevinkrueger.roadstuff.network.ServerProxy;
+import com.peacetoke.www.rslogger.RSLogger;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,16 +20,13 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("roadstuff")
 public class RoadStuff
 {
-    // Directly reference a log4j logger.
-    public static final Logger LOGGER = LogManager.getLogger(); // Default Logger
-    public static RSLogger logger = new RSLogger(LOGGER, true); // Logger for Development
+    public static RSLogger logger = new RSLogger(LogManager.getLogger(), true); // Logger for Development
 
     // Road Stuff ....
     public static final String MOD_ID = "roadstuff";
@@ -41,19 +38,16 @@ public class RoadStuff
 
     public RoadStuff()
     {
-        LOGGER.debug("RSLogger: " + RSLogger.Version());
-
         // Proxy
         proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> ServerProxy::new);
 
         // Init
         Registration.init();
-
+        ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALK_SIGN.get()));
         ModBlocks.register();
         ModItems.register();
         ModTileEntity.register();
         ModContainers.register();
-        ROAD_STUFF_TAB = new BasicTab(MOD_ID, () -> new ItemStack(ModBlocks.CROSSWALK_SIGN.get()));
 
         MinecraftForge.EVENT_BUS.register((new ModEvents()));
         MinecraftForge.EVENT_BUS.register((new ModRecipeSerializers()));
@@ -66,7 +60,6 @@ public class RoadStuff
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::LoadComplete);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -82,19 +75,13 @@ public class RoadStuff
     private void LoadComplete(final FMLLoadCompleteEvent event)
     {
         logger.log(this.getClass(), "RoadStuff is ready!");
-        LOGGER.debug(logger.LoggerAnalysis(this.getClass()));
-        if(RSLogger.isDeveloperMode()) {
-            try {
-                logger.SaveLoggerProtocol(System.getProperty("user.dir") + "\\Protocol.ptc", this.getClass());
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        }
+        logger.SaveLoggerProtocol(System.getProperty("user.dir") + "\\Protocol.ptc", this.getClass());
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event) throws Exception {
+    public void onServerStarting(FMLServerStartingEvent event)
+    {
         // do something when the server starts
     }
 }

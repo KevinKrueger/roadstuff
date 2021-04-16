@@ -20,7 +20,7 @@ public class ModContainers implements ILogger
 
         try
         {
-            toReturn = Registration.CONATINERS.register(name, sup);
+            toReturn = Registration.CONTAINERS.register(name, sup);
             LOGGER.log(ModContainers.class, "Register(Container): " + name);
         }catch (Exception exception)
         {
